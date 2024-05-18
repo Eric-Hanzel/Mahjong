@@ -10,7 +10,9 @@ module com.example.mahjong {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires java.logging;
+    requires org.testng;
 
-    opens com.example.mahjong to javafx.fxml;
-    exports com.example.mahjong;
+    opens com.mahjong.client to javafx.fxml;
+    exports com.mahjong.client;
 }

@@ -1,14 +1,18 @@
 package logic.tiles;
 
-import logic.players.GameRole;
+import java.io.Serial;
+import java.io.Serializable;
 
-public interface Tile {
-    String getType();
-    int getMagnitude();
-    int getNumber();
-    String getOwner();
-    boolean getFlowerState();
-    boolean equal(Tile otherTile);
-    void changeOwner(GameRole gameRole);
+public abstract class Tile implements Serializable,Comparable<Tile>{
+    @Serial
+    private static final long serialVersionUID = 1L;
+    private String type;
+    public void setType(String type){
+        this.type = type;
+    }
+    public String getType() {
+        return type;
+    }
+    public abstract int getMagnitude();
 
 }

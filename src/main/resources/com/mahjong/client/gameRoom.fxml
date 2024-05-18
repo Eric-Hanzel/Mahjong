@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="rootPane" styleClass="root-pane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mahjong.client.GameRoomController">
+    <top>
+        <HBox alignment="CENTER" prefHeight="180.0" prefWidth="800.0" spacing="5" styleClass="hbox">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <VBox spacing="5" styleClass="vbox">
+                <Label fx:id="playerLabel3" alignment="TOP_LEFT" text="" textFill="#a92e54">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+                <Label fx:id="dealerLabel3" alignment="TOP_LEFT" text="" textFill="#a92e54">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+                <Label fx:id="turnLabel3" alignment="TOP_LEFT" text="" textFill="#a92e54">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+                <HBox fx:id="player3HandTiles" alignment="CENTER" prefHeight="90.0" prefWidth="500.0" spacing="5">
+                </HBox>
+                <HBox fx:id="player3LockedTiles" alignment="CENTER" prefHeight="90.0" prefWidth="500.0" spacing="5">
+                </HBox>
+            </VBox>
+        </HBox>
+    </top>
+    <left>
+        <VBox alignment="CENTER" prefHeight="440.0" prefWidth="180.0" spacing="5" styleClass="vbox">
+            <VBox styleClass="vbox">
+                <padding>
+                    <Insets bottom="10" left="10" right="10" top="10" />
+                </padding>
+                <Label fx:id="playerLabel4" alignment="CENTER" text="" textFill="#a92e54">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+                <Label fx:id="dealerLabel4" alignment="CENTER" text="" textFill="#a92e54">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+                <Label fx:id="turnLabel4" alignment="CENTER" text="" textFill="#a92e54">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            </VBox>
+            <HBox styleClass="hbox">
+                <VBox fx:id="player4HandTiles" alignment="CENTER" prefHeight="300.0" prefWidth="90.0" spacing="5" styleClass="vbox">
+                </VBox>
+                <VBox fx:id="player4LockedTiles" alignment="CENTER" prefHeight="300.0" prefWidth="90.0" spacing="5" styleClass="vbox">
+                </VBox>
+            </HBox>
+        </VBox>
+    </left>
+    <right>
+        <VBox alignment="CENTER" prefHeight="440.0" prefWidth="180.0" spacing="5" styleClass="vbox">
+            <VBox alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" styleClass="vbox">
+                <padding>
+                    <Insets bottom="10" left="10" right="10" top="10" />
+                </padding>
+                <Label fx:id="playerLabel2" alignment="TOP_RIGHT" contentDisplay="RIGHT" text="" textFill="#a92e54">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+                <Label fx:id="dealerLabel2" alignment="TOP_RIGHT" contentDisplay="RIGHT" text="" textAlignment="RIGHT" textFill="#a92e54">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+                <Label fx:id="turnLabel2" alignment="TOP_RIGHT" contentDisplay="RIGHT" text="" textAlignment="RIGHT" textFill="#a92e54">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            </VBox>
+            <HBox styleClass="hbox">
+                <VBox fx:id="player2LockedTiles" alignment="CENTER" prefHeight="300.0" prefWidth="90.0" spacing="5" styleClass="vbox">
+                </VBox>
+                <VBox fx:id="player2HandTiles" alignment="CENTER" prefHeight="300.0" prefWidth="90.0" spacing="5">
+                </VBox>
+            </HBox>
+        </VBox>
+    </right>
+    <bottom>
+        <VBox prefHeight="180.0" prefWidth="800.0" spacing="5" styleClass="vbox">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <Label fx:id="playerLabel1" alignment="TOP_LEFT" text="" textFill="#a92e54">
+            <font>
+               <Font size="20.0" />
+            </font></Label>
+            <Label fx:id="dealerLabel1" alignment="TOP_LEFT" text="" textFill="#a92e54">
+            <font>
+               <Font size="20.0" />
+            </font></Label>
+            <Label fx:id="turnLabel1" alignment="TOP_LEFT" text="" textFill="#a92e54">
+            <font>
+               <Font size="20.0" />
+            </font></Label>
+            <HBox fx:id="player1LockedTiles" alignment="CENTER" spacing="5" styleClass="hbox">
+            </HBox>
+            <HBox fx:id="player1Tiles" alignment="CENTER" spacing="5" styleClass="hbox">
+            </HBox>
+            <HBox alignment="CENTER" spacing="20" styleClass="hbox">
+                <Button fx:id="Chow" minWidth="70" onAction="#handleChow" text="Chow" />
+                <Button fx:id="Pong" minWidth="70" onAction="#handlePong" text="Pong" />
+                <Button fx:id="Kong" minWidth="70" onAction="#handleKong" text="Kong" />
+                <Button fx:id="Get" minWidth="70" onAction="#handleGet" text="Get" />
+                <Button fx:id="Discard" minWidth="70" onAction="#handleDiscard" text="Discard" />
+                <Button fx:id="Skip" minWidth="70" onAction="#handleSkip" text="Skip" />
+                <Button fx:id="Hint" minWidth="70" onAction="#handleHint" text="Hint" />
+                <Button fx:id="Hu" minWidth="70" onAction="#handleHu" text="Hu" />
+                <Button minWidth="70" onAction="#handlePrevious" text="Prev" />
+                <Button fx:id="Music" minWidth="70" onAction="#handleMusic" text="Music" />
+                <Button minWidth="70" onAction="#handleNext" text="Next" />
+            </HBox>
+        </VBox>
+    </bottom>
+    <center>
+        <BorderPane fx:id="gameBoard" prefHeight="500.0" prefWidth="500.0" BorderPane.alignment="CENTER">
+            <top>
+                <TilePane fx:id="topTilePane" alignment="TOP_LEFT" orientation="HORIZONTAL" prefHeight="100.0" prefWidth="300.0" style="-fx-background-color: rgba(23,81,128,0);" BorderPane.alignment="CENTER">
+                    <children>
+                    </children>
+                </TilePane>
+            </top>
+            <left>
+                <TilePane fx:id="leftTilePane" alignment="TOP_LEFT" orientation="VERTICAL" prefHeight="250.0" prefWidth="120.0" style="-fx-background-color: rgba(23,81,128,0);" BorderPane.alignment="CENTER">
+                    <children>
+                    </children>
+                </TilePane>
+            </left>
+            <right>
+                <TilePane fx:id="rightTilePane" alignment="TOP_RIGHT" orientation="VERTICAL" prefHeight="250.0" prefWidth="120.0" style="-fx-background-color: rgba(23,81,128,0);" BorderPane.alignment="CENTER">
+                    <children>
+                    </children>
+                </TilePane>
+            </right>
+            <bottom>
+                <TilePane fx:id="bottomTilePane" alignment="BOTTOM_LEFT" orientation="HORIZONTAL" prefHeight="100.0" prefWidth="300.0" style="-fx-background-color: rgba(23,81,128,0);" BorderPane.alignment="CENTER">
+                    <children>
+                    </children>
+                </TilePane>
+            </bottom>
+            <center>
+                <Label fx:id="autoHideLabel" alignment="CENTER" text="" textFill="#a92e54" visible="false" />
+            </center>
+            <VBox fx:id="chowOptionsVBox" alignment="CENTER" layoutX="150" layoutY="200" spacing="10" styleClass="vbox" visible="false" />
+        </BorderPane>
+    </center>
+</BorderPane>
