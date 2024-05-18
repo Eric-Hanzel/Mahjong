@@ -4,73 +4,90 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="588d25d2-c6eb-4329-a34e-48d24e4b82c9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/mahjong/HelloApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/mahjong/HelloController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/players/Ai.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/players/GameRole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/players/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/rules/Rule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/rules/ScoringRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/rules/VictoryRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/rules/test1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/tiles/BambooTile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/tiles/CharacterTile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/tiles/DotTile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/tiles/HandTile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/tiles/HonorTile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/tiles/LibraryTile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/tiles/PlayedTile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/tiles/Tile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/tiles/TileSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/tiles/test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/mahjong/hello-view.fxml" afterDir="false" />
+    <list default="true" id="588d25d2-c6eb-4329-a34e-48d24e4b82c9" name="Changes" comment="完成基本登陆页面">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mahjong/client/GameRoomController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mahjong/client/GameRulesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mahjong/client/WaitRoomController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/mahjong/client/GameRule.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/mahjong/client/gameRoom.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/mahjong/client/gameRoomWait.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mahjong/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mahjong/client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mahjong/HelloApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mahjong/HelloController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mahjong/JoinGameRoomController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mahjong/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mahjong/client/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mahjong/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mahjong/client/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/mahjong/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/mahjong/client/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/mahjong/joinGameRoom.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/mahjong/client/joinGameRoom.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/mahjong/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/mahjong/client/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/mahjong/menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/mahjong/client/menu.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="FxmlFile" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Eric-Hanzel&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="e4ac9b36-fbcd-4bd6-9fc4-bf9690bbd3b6" />
+        <option name="url" value="https://github.com/Eric-Hanzel/Mahjong.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2gaKR81MyzqviTwMkNhOH6KkWPL" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "mtymtym",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/董瀚泽/Desktop/Mahjong/src/main/java/logic/rules",
+    "last_opened_file_path": "C:/Users/董瀚泽/Document/SceneBuilder.exe",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Libraries",
+    "project.structure.last.edited": "模块",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.3207127",
+    "settings.editor.selected.configurable": "inlay.hints",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -92,10 +109,57 @@
       <updated>1715930239840</updated>
       <workItem from="1715930240922" duration="1016000" />
       <workItem from="1715996477273" duration="1379000" />
+      <workItem from="1715999450297" duration="9130000" />
     </task>
+    <task id="LOCAL-00001" summary="完成基本登陆页面">
+      <option name="closed" value="true" />
+      <created>1716008925896</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1716008925896</updated>
+    </task>
+    <task id="LOCAL-00002" summary="完成基本登陆页面">
+      <option name="closed" value="true" />
+      <created>1716009034832</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1716009034832</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="Eric" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="更改项目结构" />
+    <MESSAGE value="完成基本登陆页面" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成基本登陆页面" />
   </component>
 </project>
