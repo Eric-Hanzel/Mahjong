@@ -5,10 +5,7 @@ import logic.players.GameRole;
 public interface Tile {
     String getType();
     int getMagnitude();
-    int getNumber();
-    String getOwner();
-    boolean getFlowerState();
+    boolean getLock();
+    void setLock(boolean b);
     boolean equal(Tile otherTile);
-    void changeOwner(GameRole gameRole);
-
 }

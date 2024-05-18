@@ -2,21 +2,22 @@ package logic.tiles;
 
 import logic.players.GameRole;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.Objects;
 
-public class BambooTile implements Tile,Comparable<Tile>{
+public class BambooTile implements Tile,Comparable<Tile>, Serializable {
+    @Serial
+    private static final long serialVersionUID = 6L;
     private final String type;
     private final int magnitude;
-    private final int number;
-    private String owner;
-    private boolean flowerState;
 
-    public BambooTile(String type,int magnitude,int number){
+    private boolean lock;
+
+    public BambooTile(String type,int magnitude){
         this.type = type;
         this.magnitude = magnitude;
-        this.number = number;
-        this.owner = "Library";
-        this.flowerState = false;
+        lock = false;
     }
 
     @Override
@@ -25,42 +26,28 @@ public class BambooTile implements Tile,Comparable<Tile>{
     }
 
     @Override
-    public void changeOwner(GameRole otherOwner) {
-        owner = otherOwner.getName();
-    }
-
-    @Override
     public String getType() {
         return type;
+    }
+    @Override
+    public boolean getLock(){
+        return lock;
+    }
+    @Override
+    public void setLock(boolean b){
+        lock = b;
     }
 
     @Override
     public int getMagnitude() {
         return magnitude;
     }
-
-    @Override
-    public int getNumber() {
-        return number;
-    }
-
-    @Override
-    public String getOwner() {
-        return owner;
-    }
-
-    @Override
-    public boolean getFlowerState() {
-        return flowerState;
-    }
-
     @Override
     public int compareTo(Tile o) {
         return Integer.compare(this.magnitude,o.getMagnitude());
     }
 
     public String toString(){
-        return type + " " + magnitude;
-        //return type + " " + magnitude + " " + number + " " + owner + " " + flowerState;
+        return magnitude + type;
     }
 }

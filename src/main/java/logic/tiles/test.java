@@ -5,7 +5,7 @@ public class test {
 
         LibraryTile libraryTile = new LibraryTile();
         PlayedTile playedTile = new PlayedTile();
-        HandTile handTile = new HandTile("test");
+        HandTile handTile = new HandTile();
         libraryTile.sort();
         System.out.println(libraryTile.getTileSet());
         for (int i = 0; i < 14; i++){

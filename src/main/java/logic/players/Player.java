@@ -2,32 +2,59 @@ package logic.players;
 
 import logic.rules.Rule;
 import logic.tiles.HandTile;
+import logic.tiles.LibraryTile;
+import logic.tiles.PlayedTile;
 import logic.tiles.Tile;
 
-public class Player implements GameRole {
+import java.io.Serial;
+import java.io.Serializable;
+
+public class Player implements GameRole, Serializable {
+    @Serial
+    private static final long serialVersionUID = 1L;
+
 
     String name;
     HandTile handTile;
+    LibraryTile libraryTile;
+    PlayedTile playedTile;
     boolean dealerState;
     boolean turnState;
-    boolean readyState;
+    boolean canGet;
+    boolean canDiscard;
+    boolean canChow;
+    boolean canPong;
+    boolean canBrightKong;
+    boolean canDarkKong;
+    boolean skip;
     int scoring;
     Rule rule;
 
-    Player(String player){
+    public Player(String player,LibraryTile libraryTile){
         name = player;
-        handTile = new HandTile(name);
+        handTile = new HandTile();
+        this.libraryTile = libraryTile;
+        playedTile = new PlayedTile();
         dealerState = false;
         turnState = false;
-        readyState = false;
         scoring = 0;
+        canGet = false;
+        canDiscard = false;
+        canChow = false;
+        canPong = false;
+        canBrightKong = false;
+        canDarkKong = false;
+        skip = false;
         rule = new Rule();
     }
 
+    private LibraryTile getLibraryTile() {
+        return libraryTile;
+    }
 
     @Override
-    public void discard(Tile tile) {
-        handTile.discard(tile);
+    public Tile discard(String tileType) {
+        return handTile.discard(tileType);
     }
 
     @Override
@@ -40,18 +67,6 @@ public class Player implements GameRole {
         dealerState = !dealerState;
     }
 
-    @Override
-    public void changeTurnState() {
-        turnState = !turnState;
-    }
-
-    @Override
-    public void changeReadyState() {
-        readyState = !readyState;
-    }
-
-
-    //依赖rule
     @Override
     public void changeScoring() {
 
@@ -76,16 +91,79 @@ public class Player implements GameRole {
     public boolean getTurnState() {
         return turnState;
     }
-
-    @Override
-    public boolean getReadyState() {
-        return readyState;
+    public boolean getCanGet(){
+        return canGet;
     }
+    public boolean getCanChow(){
+        return canChow;
+    }
+    public boolean getCanPong(){
+        return canPong;
+    }
+    public boolean getCanBrightKong(){
+        return canBrightKong;
+    }
+    public boolean getCanDarkKong(){
+        return canDarkKong;
+    }
+    public boolean getSkip(){
+        return skip;
+    }
+    public boolean getCanDiscard(){
+        return canDiscard;
+    }
+    public void setCanGet(boolean b){
+        canGet = b;
+    }
+    public void setCanDiscard(boolean b){
+        canDiscard = b;
+    }
+    public void setCanChow(boolean b){
+        canChow = b;
+    }
+    public void setCanPong(boolean b){
+        canPong = b;
+    }
+    public void setCanBrightKong(boolean b){
+        canBrightKong = b;
+    }
+    public void setCanDarkKong(boolean b){
+        canDarkKong = b;
+    }
+    public void setSkip(boolean b){
+        skip = b;
+    }
+
 
     @Override
     public int getScoring() {
         return scoring;
     }
+    @Override
+    public void setDealerState(boolean b){
+        dealerState = b;
+    }
+    @Override
+    public void setTurnState(boolean b) {
+        turnState = b;
+    }
 
+    public PlayedTile getPlayedTile() {
+        return playedTile;
+    }
 
+    public boolean checkCanChow(Tile endDiscardTile) {
+        return handTile.checkCanChow(endDiscardTile);
+    }
+
+    public boolean checkCanPong(Tile endDiscardTile) {
+        return handTile.checkCanPong(endDiscardTile);
+    }
+
+    public boolean checkCanBrightKong(Tile endDiscardTile) {
+        return handTile.checkCanBrightKong(endDiscardTile);
+    }
+    public boolean checkCanDarkKong() {
+        return handTile.checkCanDarkKong();
+    }
 }

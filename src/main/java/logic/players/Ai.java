@@ -16,7 +16,7 @@ public class Ai implements GameRole {
 
     Ai(String player){
         name = player;
-        handTile = new HandTile(name);
+        handTile = new HandTile();
         dealerState = false;
         turnState = false;
         readyState = false;
@@ -29,8 +29,9 @@ public class Ai implements GameRole {
     }
 
     @Override
-    public void discard(Tile tile) {
-        handTile.discard(tile);
+    public Tile discard(String tileType) {
+//        handTile.discard(tile);
+        return null;
     }
 
     @Override
@@ -44,13 +45,8 @@ public class Ai implements GameRole {
     }
 
     @Override
-    public void changeTurnState() {
+    public void setTurnState(boolean b) {
         turnState = !turnState;
-    }
-
-    @Override
-    public void changeReadyState() {
-        readyState = !readyState;
     }
 
 
@@ -81,13 +77,13 @@ public class Ai implements GameRole {
     }
 
     @Override
-    public boolean getReadyState() {
-        return readyState;
+    public int getScoring() {
+        return scoring;
     }
 
     @Override
-    public int getScoring() {
-        return scoring;
+    public void setDealerState(boolean b) {
+
     }
 
 

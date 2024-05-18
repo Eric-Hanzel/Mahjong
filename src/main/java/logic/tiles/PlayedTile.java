@@ -1,12 +1,16 @@
 package logic.tiles;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class PlayedTile implements TileSet{
+public class PlayedTile implements TileSet, Serializable {
+    @Serial
+    private static final long serialVersionUID = 4L;
     ArrayList<Tile> tileList;
     int tileNumber;
 
-    PlayedTile(){
+    public PlayedTile(){
         tileList = new ArrayList<Tile>();
         tileNumber = 0;
     }

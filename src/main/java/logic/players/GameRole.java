@@ -5,15 +5,13 @@ import logic.tiles.Tile;
 
 public interface GameRole {
 
-    void discard(Tile tile);
+    Tile discard(String tileType);
 
     void getTile(Tile tile);
 
     void changeDealerState();
 
-    void changeTurnState();
 
-    void changeReadyState();
 
     void changeScoring();
 
@@ -25,9 +23,11 @@ public interface GameRole {
 
     boolean getTurnState();
 
-    boolean getReadyState();
 
     int getScoring();
 
 
+    void setDealerState(boolean b);
+
+    void setTurnState(boolean b);
 }

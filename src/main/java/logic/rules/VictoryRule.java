@@ -4,9 +4,11 @@ import logic.tiles.HandTile;
 import logic.tiles.LibraryTile;
 import logic.tiles.Tile;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class VictoryRule extends Rule{
+public class VictoryRule extends Rule implements Serializable {
+    // 四个刻字，一张对子 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     public boolean allTriplets(HandTile handTile){
         boolean victory = false;
         ArrayList<ArrayList<Tile>> copyHandTile = new ArrayList<ArrayList<Tile>>(handTile.getTileSet());
@@ -26,11 +28,8 @@ public class VictoryRule extends Rule{
         int pair = 1;
         int nonPair = 4;
         ArrayList<ArrayList<Tile>> copyHandTile = new ArrayList<ArrayList<Tile>>(handTile.getTileSet());
-        nonPair = nonPair - getKongNumber(copyHandTile);
-        for (ArrayList<Tile> tileSet : copyHandTile){
-            tileSet.removeAll(checkKong(tileSet));
-        }
-        nonPair = nonPair - getSequenceNumber(copyHandTile);
+
+        nonPair = nonPair - getChowNumber(copyHandTile);
         for (ArrayList<Tile> tileSet : copyHandTile){
             tileSet.removeAll(checkSequence(tileSet));
         }

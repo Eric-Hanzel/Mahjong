@@ -2,10 +2,15 @@ package logic.rules;
 
 import logic.tiles.Tile;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Rule {
+public class Rule implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 5L;
 
+    // 传入一个类型的牌，检查顺子数量
     public ArrayList<Tile> checkSequence(ArrayList<Tile> tileSet){
         ArrayList<Tile> sequenceSet = new ArrayList<>();
         ArrayList<Tile> checkingTileSet = new ArrayList<>(tileSet);
@@ -36,7 +41,7 @@ public class Rule {
         }
         return sequenceSet;
     }
-
+    // 获取手牌顺子数量
     public int getSequenceNumber(ArrayList<ArrayList<Tile>> handTileSet){
         ArrayList<Tile> sequenceSet = new ArrayList<>();
         for (ArrayList<Tile> tileSet : handTileSet){
@@ -44,9 +49,22 @@ public class Rule {
         }
         return sequenceSet.size() / 3;
     }
+    // 获取手牌吃的数量，只检查锁的牌
+    public int getChowNumber(ArrayList<ArrayList<Tile>> handTileSet){
+        ArrayList<Tile> sequenceSet = new ArrayList<>();
+        for (ArrayList<Tile> tileSet : handTileSet){
+            for (Tile tile: tileSet){
+                if (!tile.getLock()){
+                    tileSet.remove(tile);
+                }
+            }
+            sequenceSet.addAll(checkSequence(tileSet));
+        }
+        return sequenceSet.size() / 3;
+    }
 
 
-
+    // 杠不算在内
     public ArrayList<Tile> checkTriplet(ArrayList<Tile> tileSet){
         ArrayList<Tile> tripletSet = new ArrayList<>();
         ArrayList<Tile> checkingTileSet = new ArrayList<>(tileSet);
@@ -96,7 +114,7 @@ public class Rule {
         }
         return tripletSet;
     }
-
+    // 仅碰，没有考虑杠
     public int getTripletNumber(ArrayList<ArrayList<Tile>> handTileSet){
         ArrayList<Tile> tripletSet = new ArrayList<>();
         for (ArrayList<Tile> tileSet : handTileSet){

@@ -2,32 +2,27 @@ package logic.tiles;
 
 import logic.players.GameRole;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.Objects;
 
-public class DotTile implements Tile,Comparable<Tile>{
+public class DotTile implements Tile,Comparable<Tile>, Serializable {
+    @Serial
+    private static final long serialVersionUID = 8L;
     private final String type;
     private final int magnitude;
-    private final int number;
-    private String owner;
-    private boolean flowerState;
+    private boolean lock;
 
-    public DotTile(String type,int magnitude,int number){
+    public DotTile(String type,int magnitude){
         this.type = type;
         this.magnitude = magnitude;
-        this.number = number;
-        this.owner = "Library";
-        this.flowerState = false;
+        lock = false;
     }
-
     @Override
     public boolean equal(Tile otherTile) {
         return Objects.equals(type, otherTile.getType()) && magnitude == otherTile.getMagnitude();
     }
 
-    @Override
-    public void changeOwner(GameRole otherOwner) {
-        owner = otherOwner.getName();
-    }
 
     @Override
     public String getType() {
@@ -38,20 +33,13 @@ public class DotTile implements Tile,Comparable<Tile>{
     public int getMagnitude() {
         return magnitude;
     }
-
     @Override
-    public int getNumber() {
-        return number;
+    public boolean getLock(){
+        return lock;
     }
-
     @Override
-    public String getOwner() {
-        return owner;
-    }
-
-    @Override
-    public boolean getFlowerState() {
-        return flowerState;
+    public void setLock(boolean b){
+        lock = b;
     }
 
     @Override
@@ -60,7 +48,6 @@ public class DotTile implements Tile,Comparable<Tile>{
     }
 
     public String toString(){
-        return type + " " + magnitude;
-        //return type + " " + magnitude + " " + number + " " + owner + " " + flowerState;
+        return  magnitude + type;
     }
 }
