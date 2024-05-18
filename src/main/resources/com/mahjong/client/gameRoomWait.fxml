@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mahjong.client.WaitRoomController">
+    <VBox.margin>
+        <Insets top="20.0" bottom="20.0" left="20.0" right="20.0"/>
+    </VBox.margin>
+    <Label text="等待玩家加入..." />
+    <Button fx:id="returnButton" text="返回" onAction="#handleReturn" />
+</VBox>
