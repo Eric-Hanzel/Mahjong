@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.layout.HBox?>
+<VBox alignment="CENTER" spacing="10" xmlns:fx="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mahjong.client.OverRoomController">
+    <Label text="游戏结束" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+    <Label text="${playerName}" style="-fx-font-size: 18px;" />
+    <Label text="${victoryType}" style="-fx-font-size: 18px;" />
+    <Label text="${playerHand}" style="-fx-font-size: 18px;" />
+    <HBox fx:id="showVictoryTiles" spacing="10" alignment="CENTER"  padding="10">
+        <Button text="Continue" style="-fx-font-size: 14px;" onAction="#continueGame"/>
+        <Button text="Exit" style="-fx-font-size: 14px;" onAction="#exitGame"/>
+    </HBox>
+</VBox>

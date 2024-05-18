@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.media.*?>
+
+<?import javafx.scene.text.Text?>
+<BorderPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mahjong.client.GameRoomController">
+    <top>
+        <HBox alignment="CENTER" spacing="5" style="-fx-background-color: lightgray;">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <VBox spacing="5">
+                <Label fx:id="playerLabel3" text="" />
+                <Label fx:id="dealerLabel3" text=""/>
+                <Label fx:id="turnLabel3" text=""/>
+                <HBox>
+                    <Rectangle arcHeight="10" arcWidth="10" fill="GRAY" height="45" width="30" />
+                    <Rectangle arcHeight="10" arcWidth="10" fill="GRAY" height="45" width="30" />
+                    <Rectangle arcHeight="10" arcWidth="10" fill="GRAY" height="45" width="30" />
+                    <Rectangle arcHeight="10" arcWidth="10" fill="GRAY" height="45" width="30" />
+                    <Rectangle arcHeight="10" arcWidth="10" fill="GRAY" height="45" width="30" />
+                    <Rectangle arcHeight="10" arcWidth="10" fill="GRAY" height="45" width="30" />
+                    <Rectangle arcHeight="10" arcWidth="10" fill="GRAY" height="45" width="30" />
+                    <Rectangle arcHeight="10" arcWidth="10" fill="GRAY" height="45" width="30" />
+                    <Rectangle arcHeight="10" arcWidth="10" fill="GRAY" height="45" width="30" />
+                    <Rectangle arcHeight="10" arcWidth="10" fill="GRAY" height="45" width="30" />
+                    <Rectangle arcHeight="10" arcWidth="10" fill="GRAY" height="45" width="30" />
+                    <Rectangle arcHeight="10" arcWidth="10" fill="GRAY" height="45" width="30" />
+                    <Rectangle arcHeight="10" arcWidth="10" fill="GRAY" height="45" width="30" />
+                </HBox>
+                <HBox fx:id="player3LockedTiles" spacing="5" alignment="CENTER">
+
+                </HBox>
+            </VBox>
+        </HBox>
+    </top>
+    <left>
+        <VBox alignment="CENTER" spacing="5" style="-fx-background-color: lightgray;">
+            <VBox>
+                <padding>
+                    <Insets bottom="10" left="10" right="10" top="10" />
+                </padding>
+                <Label fx:id="playerLabel4" text="" />
+                <Label fx:id="dealerLabel4" text=""/>
+                <Label fx:id="turnLabel4" text=""/>
+            </VBox>
+            <HBox>
+                <VBox>
+                    <Rectangle arcHeight="10" arcWidth="10" fill="GRAY" height="30.0" width="45.0" />
+                    <Rectangle arcHeight="10" arcWidth="10" fill="GRAY" height="30.0" width="45.0" />
+                    <Rectangle arcHeight="10" arcWidth="10" fill="GRAY" height="30.0" width="45.0" />
+                    <Rectangle arcHeight="10" arcWidth="10" fill="GRAY" height="30.0" width="45.0" />
+                    <Rectangle arcHeight="10" arcWidth="10" fill="GRAY" height="30.0" width="45.0" />
+                    <Rectangle arcHeight="10" arcWidth="10" fill="GRAY" height="30.0" width="45.0" />
+                    <Rectangle arcHeight="10" arcWidth="10" fill="GRAY" height="30.0" width="45.0" />
+                    <Rectangle arcHeight="10" arcWidth="10" fill="GRAY" height="30.0" width="45.0" />
+                    <Rectangle arcHeight="10" arcWidth="10" fill="GRAY" height="30.0" width="45.0" />
+                    <Rectangle arcHeight="10" arcWidth="10" fill="GRAY" height="30.0" width="45.0" />
+                    <Rectangle arcHeight="10" arcWidth="10" fill="GRAY" height="30.0" width="45.0" />
+                    <Rectangle arcHeight="10" arcWidth="10" fill="GRAY" height="30.0" width="45.0" />
+                    <Rectangle arcHeight="10" arcWidth="10" fill="GRAY" height="30.0" width="45.0" />
+                </VBox>
+                <VBox fx:id="player4LockedTiles" spacing="5" alignment="CENTER">
+
+                </VBox>
+
+            </HBox>
+        </VBox>
+    </left>
+    <right>
+        <VBox alignment="CENTER" spacing="5" style="-fx-background-color: lightgray;" BorderPane.alignment="CENTER_RIGHT">
+            <VBox>
+                <padding>
+                    <Insets bottom="10" left="10" right="10" top="10" />
+                </padding>
+                <Label fx:id="playerLabel2" text="" />
+                <Label fx:id="dealerLabel2" text=""/>
+                <Label fx:id="turnLabel2" text=""/>
+            </VBox>
+            <HBox>
+                <VBox fx:id="player2LockedTiles" spacing="5" alignment="CENTER">
+
+                </VBox>
+                <VBox>
+                    <Rectangle arcHeight="10" arcWidth="10" fill="GRAY" height="30.0" width="45.0" />
+                    <Rectangle arcHeight="10" arcWidth="10" fill="GRAY" height="30.0" width="45.0" />
+                    <Rectangle arcHeight="10" arcWidth="10" fill="GRAY" height="30.0" width="45.0" />
+                    <Rectangle arcHeight="10" arcWidth="10" fill="GRAY" height="30.0" width="45.0" />
+                    <Rectangle arcHeight="10" arcWidth="10" fill="GRAY" height="30.0" width="45.0" />
+                    <Rectangle arcHeight="10" arcWidth="10" fill="GRAY" height="30.0" width="45.0" />
+                    <Rectangle arcHeight="10" arcWidth="10" fill="GRAY" height="30.0" width="45.0" />
+                    <Rectangle arcHeight="10" arcWidth="10" fill="GRAY" height="30.0" width="45.0" />
+                    <Rectangle arcHeight="10" arcWidth="10" fill="GRAY" height="30.0" width="45.0" />
+                    <Rectangle arcHeight="10" arcWidth="10" fill="GRAY" height="30.0" width="45.0" />
+                    <Rectangle arcHeight="10" arcWidth="10" fill="GRAY" height="30.0" width="45.0" />
+                    <Rectangle arcHeight="10" arcWidth="10" fill="GRAY" height="30.0" width="45.0" />
+                    <Rectangle arcHeight="10" arcWidth="10" fill="GRAY" height="30.0" width="45.0" />
+                </VBox>
+
+            </HBox>
+
+        </VBox>
+    </right>
+    <bottom>
+        <VBox spacing="5" style="-fx-background-color: lightgray;">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <Label fx:id="playerLabel1" text="" />
+            <Label fx:id="dealerLabel1" text=""/>
+            <Label fx:id="turnLabel1" text=""/>
+            <HBox fx:id="player1LockedTiles" spacing="5" alignment="CENTER">
+
+            </HBox>
+            <HBox fx:id="player1Tiles" spacing="5" alignment="CENTER">
+
+            </HBox>
+            <HBox alignment="CENTER" spacing="20">
+                <Button fx:id="Chow" minWidth="70" text="Chow" onAction="#handleChow"/>
+                <Button fx:id="Pong" minWidth="70" text="Pong" onAction="#handlePong" />
+                <Button fx:id="Kong" minWidth="70" text="Kong" onAction="#handleKong"/>
+                <Button fx:id="Get" minWidth="70" text="Get" onAction="#handleGet" />
+                <Button fx:id="Discard" minWidth="70" text="Discard" onAction="#handleDiscard" />
+                <Button fx:id="Skip" minWidth="70" text="Skip" onAction="#handleSkip"/>
+                <Button fx:id="Hu" minWidth="70" text="Hu" onAction="#handleHu"/>
+                <Button  minWidth="70" text="Prev" onAction="#handlePrevious" />
+                <Button fx:id="Music" minWidth="70" text="Music" onAction="#handleMusic" />
+                <Button  minWidth="70" text="Next" onAction="#handleNext" />
+            </HBox>
+        </VBox>
+    </bottom>
+    <center>
+        <BorderPane fx:id="gameBoard" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <top>
+                <TilePane fx:id="topTilePane" prefHeight="100.0" prefWidth="410.0" orientation="HORIZONTAL" BorderPane.alignment="CENTER" alignment="TOP_LEFT">
+                    <children>
+                    </children>
+                </TilePane>
+            </top>
+            <left>
+                <TilePane fx:id="leftTilePane" prefHeight="250.0" prefWidth="120.0" orientation="VERTICAL" BorderPane.alignment="CENTER" alignment="TOP_LEFT">
+                    <children>
+                    </children>
+                </TilePane>
+            </left>
+            <right>
+                <TilePane fx:id="rightTilePane" prefHeight="200.0" prefWidth="120.0" orientation="VERTICAL" BorderPane.alignment="CENTER" alignment="TOP_RIGHT">
+                    <children>
+                    </children>
+                </TilePane>
+            </right>
+            <bottom>
+                <TilePane fx:id="bottomTilePane" prefHeight="100.0" prefWidth="410.0" orientation="HORIZONTAL" BorderPane.alignment="CENTER" alignment="BOTTOM_LEFT">
+                    <children>
+                    </children>
+                </TilePane>
+            </bottom>
+            <center>
+                <Label fx:id="autoHideLabel" text="" alignment="CENTER" visible="false" />
+<!--                <VBox fx:id="chowOptionsVBox" alignment="CENTER" spacing="10" layoutX="150" layoutY="200" visible="false"/>-->
+            </center>
+            <VBox fx:id="chowOptionsVBox" alignment="CENTER" spacing="10" layoutX="150" layoutY="200" visible="false"/>
+        </BorderPane>
+    </center>
+</BorderPane>

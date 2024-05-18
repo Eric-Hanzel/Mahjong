@@ -4,46 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="588d25d2-c6eb-4329-a34e-48d24e4b82c9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/mahjong/HelloApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/mahjong/HelloController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/players/Ai.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/players/GameRole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/players/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/rules/Rule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/rules/ScoringRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/rules/VictoryRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/rules/test1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/tiles/BambooTile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/tiles/CharacterTile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/tiles/DotTile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/tiles/HandTile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/tiles/HonorTile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/tiles/LibraryTile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/tiles/PlayedTile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/tiles/Tile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/tiles/TileSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/tiles/test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/mahjong/hello-view.fxml" afterDir="false" />
+    <list default="true" id="588d25d2-c6eb-4329-a34e-48d24e4b82c9" name="Changes" comment="完成基本登陆页面">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/mahjong/GameRoomController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/mahjong/GameRulesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/mahjong/gameRoom.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/mahjong/gameRule.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -61,9 +46,9 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "Eric",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/董瀚泽/Desktop/Mahjong/src/main/java/logic/rules",
+    "last_opened_file_path": "C:/Users/董瀚泽/Document/SceneBuilder.exe",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -92,10 +77,56 @@
       <updated>1715930239840</updated>
       <workItem from="1715930240922" duration="1016000" />
       <workItem from="1715996477273" duration="1379000" />
+      <workItem from="1715999450297" duration="9130000" />
     </task>
+    <task id="LOCAL-00001" summary="完成基本登陆页面">
+      <option name="closed" value="true" />
+      <created>1716008925896</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1716008925896</updated>
+    </task>
+    <task id="LOCAL-00002" summary="完成基本登陆页面">
+      <option name="closed" value="true" />
+      <created>1716009034832</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1716009034832</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="Eric" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="更改项目结构" />
+    <MESSAGE value="完成基本登陆页面" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成基本登陆页面" />
   </component>
 </project>
