@@ -3,7 +3,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
+<<<<<<< HEAD:src/main/resources/com/mahjong/client/menu.fxml
 <VBox alignment="CENTER" fx:controller="com.mahjong.client.MenuController" spacing="20" xmlns:fx="http://javafx.com/fxml">
+=======
+<VBox alignment="CENTER" fx:controller="com.example.mahjong.MenuController" spacing="20" xmlns:fx="http://javafx.com/fxml">
+>>>>>>> origin/mtymtym:src/main/resources/com/example/mahjong/menu.fxml
     <Text text="麻将游戏" />
     <Button text="创建房间" fx:id="createRoomButton" onAction="#handleCreateRoom" />
     <Button text="加入房间" fx:id="joinRoomButton" onAction="#handleJoinRoom" />
