@@ -1,0 +1,695 @@
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\"\r\n         xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n         xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n    <modelVersion>4.0.0</modelVersion>\r\n\r\n    <groupId>com.example</groupId>\r\n    <artifactId>Mahjong</artifactId>\r\n    <version>1.0-SNAPSHOT</version>\r\n    <name>Mahjong</name>\r\n\r\n    <properties>\r\n        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>\r\n        <junit.version>5.9.2</junit.version>\r\n    </properties>\r\n\r\n    <dependencies>\r\n        <dependency>\r\n            <groupId>org.openjfx</groupId>\r\n            <artifactId>javafx-controls</artifactId>\r\n            <version>17.0.6</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.openjfx</groupId>\r\n            <artifactId>javafx-fxml</artifactId>\r\n            <version>17.0.6</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.openjfx</groupId>\r\n            <artifactId>javafx-web</artifactId>\r\n            <version>17.0.6</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.openjfx</groupId>\r\n            <artifactId>javafx-media</artifactId>\r\n            <version>17.0.6</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.controlsfx</groupId>\r\n            <artifactId>controlsfx</artifactId>\r\n            <version>11.1.2</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>com.dlsc.formsfx</groupId>\r\n            <artifactId>formsfx-core</artifactId>\r\n            <version>11.6.0</version>\r\n            <exclusions>\r\n                <exclusion>\r\n                    <groupId>org.openjfx</groupId>\r\n                    <artifactId>*</artifactId>\r\n                </exclusion>\r\n            </exclusions>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>net.synedra</groupId>\r\n            <artifactId>validatorfx</artifactId>\r\n            <version>0.4.0</version>\r\n            <exclusions>\r\n                <exclusion>\r\n                    <groupId>org.openjfx</groupId>\r\n                    <artifactId>*</artifactId>\r\n                </exclusion>\r\n            </exclusions>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.kordamp.ikonli</groupId>\r\n            <artifactId>ikonli-javafx</artifactId>\r\n            <version>12.3.1</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.kordamp.bootstrapfx</groupId>\r\n            <artifactId>bootstrapfx-core</artifactId>\r\n            <version>0.4.0</version>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>eu.hansolo</groupId>\r\n            <artifactId>tilesfx</artifactId>\r\n            <version>17.1.17</version>\r\n            <exclusions>\r\n                <exclusion>\r\n                    <groupId>org.openjfx</groupId>\r\n                    <artifactId>*</artifactId>\r\n                </exclusion>\r\n            </exclusions>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>com.github.almasb</groupId>\r\n            <artifactId>fxgl</artifactId>\r\n            <version>17.2</version>\r\n            <exclusions>\r\n                <exclusion>\r\n                    <groupId>org.openjfx</groupId>\r\n                    <artifactId>*</artifactId>\r\n                </exclusion>\r\n            </exclusions>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.junit.jupiter</groupId>\r\n            <artifactId>junit-jupiter-api</artifactId>\r\n            <version>${junit.version}</version>\r\n            <scope>test</scope>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.junit.jupiter</groupId>\r\n            <artifactId>junit-jupiter-engine</artifactId>\r\n            <version>${junit.version}</version>\r\n            <scope>test</scope>\r\n        </dependency>\r\n    </dependencies>\r\n\r\n    <build>\r\n        <plugins>\r\n            <plugin>\r\n                <groupId>org.apache.maven.plugins</groupId>\r\n                <artifactId>maven-compiler-plugin</artifactId>\r\n                <version>3.11.0</version>\r\n                <configuration>\r\n                    <source>17</source>\r\n                    <target>17</target>\r\n                </configuration>\r\n            </plugin>\r\n            <plugin>\r\n                <groupId>org.openjfx</groupId>\r\n                <artifactId>javafx-maven-plugin</artifactId>\r\n                <version>0.0.8</version>\r\n                <executions>\r\n                    <execution>\r\n                        <!-- Default configuration for running with: mvn clean javafx:run -->\r\n                        <id>default-cli</id>\r\n                        <configuration>\r\n                            <mainClass>com.example.mahjong/com.example.mahjong.Client</mainClass>\r\n                            <launcher>app</launcher>\r\n                            <jlinkZipName>app</jlinkZipName>\r\n                            <jlinkImageName>app</jlinkImageName>\r\n                            <noManPages>true</noManPages>\r\n                            <stripDebug>true</stripDebug>\r\n                            <noHeaderFiles>true</noHeaderFiles>\r\n                        </configuration>\r\n                    </execution>\r\n                </executions>\r\n            </plugin>\r\n        </plugins>\r\n    </build>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pom.xml b/pom.xml
+--- a/pom.xml	
++++ b/pom.xml	
+@@ -16,6 +16,26 @@
+ 
+     <dependencies>
+         <dependency>
++            <groupId>eu.hansolo.fx</groupId>
++            <artifactId>countries</artifactId>
++            <version>17.0.23</version>
++        </dependency>
++        <dependency>
++            <groupId>eu.hansolo.fx</groupId>
++            <artifactId>heatmap</artifactId> <!-- 假设 artifactId 是 'heatmap' -->
++            <version>17.0.12</version>
++        </dependency>
++        <dependency>
++            <groupId>eu.hansolo</groupId>
++            <artifactId>toolboxfx</artifactId>
++            <version>17.0.33</version>
++        </dependency>
++        <dependency>
++            <groupId>eu.hansolo</groupId>
++            <artifactId>toolbox</artifactId>
++            <version>17.0.35</version>
++        </dependency>
++        <dependency>
+             <groupId>org.openjfx</groupId>
+             <artifactId>javafx-controls</artifactId>
+             <version>17.0.6</version>
+@@ -101,6 +121,11 @@
+             <scope>test</scope>
+         </dependency>
+         <dependency>
++            <groupId>org.controlsfx</groupId>
++            <artifactId>controlsfx</artifactId>
++            <version>11.1.1</version>
++        </dependency>
++        <dependency>
+             <groupId>org.junit.jupiter</groupId>
+             <artifactId>junit-jupiter-engine</artifactId>
+             <version>${junit.version}</version>
+@@ -128,7 +153,7 @@
+                         <!-- Default configuration for running with: mvn clean javafx:run -->
+                         <id>default-cli</id>
+                         <configuration>
+-                            <mainClass>com.example.mahjong/com.example.mahjong.Client</mainClass>
++                            <mainClass>com.example.mahjong/com.mahjong.client.Client</mainClass>
+                             <launcher>app</launcher>
+                             <jlinkZipName>app</jlinkZipName>
+                             <jlinkImageName>app</jlinkImageName>
+Index: src/main/java/com/example/mahjong/MenuController.java
+===================================================================
+diff --git a/src/main/java/com/example/mahjong/MenuController.java b/src/main/java/com/example/mahjong/MenuController.java
+deleted file mode 100644
+--- a/src/main/java/com/example/mahjong/MenuController.java	
++++ /dev/null	
+@@ -1,55 +0,0 @@
+-package com.example.mahjong;
+-import javafx.fxml.FXML;
+-import javafx.fxml.FXMLLoader;
+-import javafx.scene.Scene;
+-import javafx.scene.control.Button;
+-import javafx.stage.Stage;
+-
+-import java.io.IOException;
+-
+-public class MenuController {
+-
+-    @FXML
+-    private Button createRoomButton;
+-    @FXML
+-    private Button joinRoomButton;
+-    @FXML
+-    private Button gameRulesButton;
+-    @FXML
+-    private Button exitGameButton;
+-
+-
+-    @FXML
+-    private void handleCreateRoom() throws IOException {
+-        // TODO: 跳转到创建房间的页面
+-        FXMLLoader fxmlLoader = new FXMLLoader(Client.class.getResource("gameRoom.fxml"));
+-        Scene gameRuleScene = new Scene(fxmlLoader.load(), 600, 400);
+-        // 获取当前窗口并设置新场景
+-        Stage primaryStage = (Stage) createRoomButton.getScene().getWindow();
+-        primaryStage.setScene(gameRuleScene);
+-    }
+-
+-    @FXML
+-    private void handleJoinRoom() {
+-        // TODO: 跳转到加入房间的页面
+-    }
+-
+-    @FXML
+-    private void handleGameRules() throws IOException {
+-        // TODO: 显示游戏规则
+-        // 创建游戏主页面的场景和布局
+-        FXMLLoader fxmlLoader = new FXMLLoader(Client.class.getResource("gameRule.fxml"));
+-        Scene gameRuleScene = new Scene(fxmlLoader.load(), 600, 400);
+-        // 获取当前窗口并设置新场景
+-        Stage primaryStage = (Stage) gameRulesButton.getScene().getWindow();
+-        primaryStage.setScene(gameRuleScene);
+-    }
+-
+-    @FXML
+-    private void handleExitGame() {
+-        // 退出程序
+-        Stage stage = (Stage) exitGameButton.getScene().getWindow();
+-        stage.close();
+-    }
+-
+-}
+Index: src/main/java/com/mahjong/client/MenuController.java
+===================================================================
+diff --git a/src/main/java/com/mahjong/client/MenuController.java b/src/main/java/com/mahjong/client/MenuController.java
+new file mode 100644
+--- /dev/null	
++++ b/src/main/java/com/mahjong/client/MenuController.java	
+@@ -0,0 +1,57 @@
++package com.mahjong.client;
++import com.mahjong.client.WaitRoomController;
++import javafx.event.ActionEvent;
++import javafx.fxml.FXML;
++import javafx.fxml.FXMLLoader;
++import javafx.scene.Scene;
++import javafx.scene.control.Button;
++import javafx.stage.Stage;
++
++import java.io.IOException;
++
++public class MenuController {
++    @FXML
++    private Button gameStartButton;
++    @FXML
++    private Button gameRulesButton;
++    @FXML
++    private Button exitGameButton;
++
++
++    @FXML
++    private void handleGameStart() throws IOException {
++//        clientCommunicateThread.start();
++
++        FXMLLoader loader = new FXMLLoader(getClass().getResource("gameRoomWait.fxml"));
++        Scene waitingScene = new Scene(loader.load(), 600, 400);
++
++        // 获取当前窗口
++        Stage stage = (Stage) gameStartButton.getScene().getWindow();
++        stage.setScene(waitingScene);
++
++        WaitRoomController controller = loader.getController();
++        controller.initializeNet(stage);
++
++    }
++
++    @FXML
++    private void handleGameRules() throws IOException {
++        // TODO: 显示游戏规则
++        // 创建游戏主页面的场景和布局
++        FXMLLoader loader = new FXMLLoader(getClass().getResource("gameRule.fxml"));
++        Scene gameRuleScene = new Scene(loader.load(), 600, 400);
++
++        // 获取当前窗口
++        Stage stage = (Stage) gameRulesButton.getScene().getWindow();
++        stage.setScene(gameRuleScene);
++
++    }
++
++    @FXML
++    private void handleExitGame() {
++        // 退出程序
++        Stage stage = (Stage) exitGameButton.getScene().getWindow();
++        stage.close();
++    }
++
++}
+Index: src/main/resources/com/example/mahjong/client_fxml/gameRoom.fxml
+===================================================================
+diff --git a/src/main/resources/com/example/mahjong/client_fxml/gameRoom.fxml b/src/main/resources/com/example/mahjong/client_fxml/gameRoom.fxml
+new file mode 100644
+--- /dev/null	
++++ b/src/main/resources/com/example/mahjong/client_fxml/gameRoom.fxml	
+@@ -0,0 +1,76 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<?import javafx.scene.layout.*?>
++<?import javafx.scene.control.*?>
++<?import javafx.scene.text.*?>
++<?import javafx.geometry.*?>
++
++<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mahjong.client.GameRoomController">
++    <children>
++        <!-- 主用户区域 -->
++        <VBox alignment="CENTER" layoutX="300.0" layoutY="650.0" spacing="10.0">
++            <children>
++                <HBox spacing="5.0">
++                    <children>
++                        <Button text="出牌" />
++                        <Button text="吃" />
++                        <Button text="碰" />
++                        <Button text="杠" />
++                        <Button text="胡" />
++                    </children>
++                </HBox>
++                <HBox spacing="5.0">
++                    <children>
++                        <!-- 主用户手牌 -->
++                        <Pane prefHeight="100.0" prefWidth="600.0" style="-fx-background-color: beige;" />
++                    </children>
++                </HBox>
++                <HBox spacing="5.0">
++                    <children>
++                        <!-- 主用户锁定的牌 -->
++                        <Pane prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: grey;" />
++                    </children>
++                </HBox>
++            </children>
++        </VBox>
++
++        <!-- 左侧玩家区域 -->
++        <VBox alignment="CENTER" layoutX="50.0" layoutY="200.0" spacing="10.0">
++            <children>
++                <!-- 左侧玩家锁定的牌 -->
++                <Pane prefHeight="50.0" prefWidth="300.0" rotate="90.0" style="-fx-background-color: grey;" />
++                <!-- 左侧玩家手牌 -->
++                <Pane prefHeight="100.0" prefWidth="600.0" rotate="90.0" style="-fx-background-color: transparent;" />
++            </children>
++        </VBox>
++
++        <!-- 右侧玩家区域 -->
++        <VBox alignment="CENTER" layoutX="700.0" layoutY="200.0" spacing="10.0">
++            <children>
++                <!-- 右侧玩家锁定的牌 -->
++                <Pane prefHeight="50.0" prefWidth="300.0" rotate="-90.0" style="-fx-background-color: grey;" />
++                <!-- 右侧玩家手牌 -->
++                <Pane prefHeight="100.0" prefWidth="600.0" rotate="-90.0" style="-fx-background-color: transparent;" />
++            </children>
++        </VBox>
++
++        <!-- 上方玩家区域 -->
++        <VBox alignment="CENTER" layoutX="300.0" layoutY="50.0" spacing="10.0">
++            <children>
++                <!-- 上方玩家锁定的牌 -->
++                <Pane prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: grey;" />
++                <!-- 上方玩家手牌 -->
++                <Pane prefHeight="100.0" prefWidth="600.0" style="-fx-background-color: transparent;" />
++            </children>
++        </VBox>
++
++        <!-- 牌库和弃牌堆区域 -->
++        <HBox alignment="CENTER" layoutX="300.0" layoutY="400.0" spacing="50.0">
++            <children>
++                <!-- 牌库 -->
++                <Pane prefHeight="150.0" prefWidth="100.0" style="-fx-background-color: darkgreen;" />
++                <!-- 弃牌堆 -->
++                <Pane prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: darkred;" />
++            </children>
++        </HBox>
++    </children>
++</AnchorPane>
+Index: src/main/resources/com/example/mahjong/client_fxml/gameRoomWait.fxml
+===================================================================
+diff --git a/src/main/resources/com/example/mahjong/client_fxml/gameRoomWait.fxml b/src/main/resources/com/example/mahjong/client_fxml/gameRoomWait.fxml
+new file mode 100644
+--- /dev/null	
++++ b/src/main/resources/com/example/mahjong/client_fxml/gameRoomWait.fxml	
+@@ -0,0 +1,13 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<?import javafx.geometry.Insets?>
++<?import javafx.scene.control.Label?>
++<?import javafx.scene.layout.VBox?>
++<?import javafx.scene.control.Button?>
++
++<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mahjong.client.WaitRoomController">
++    <VBox.margin>
++        <Insets top="20.0" bottom="20.0" left="20.0" right="20.0"/>
++    </VBox.margin>
++    <Label text="等待玩家加入..." />
++    <Button fx:id="returnButton" text="返回" onAction="#handleReturn" />
++</VBox>
+Index: src/main/java/module-info.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>module com.example.mahjong {\r\n    requires javafx.controls;\r\n    requires javafx.fxml;\r\n    requires javafx.web;\r\n\r\n    requires org.controlsfx.controls;\r\n    requires com.dlsc.formsfx;\r\n    requires net.synedra.validatorfx;\r\n    requires org.kordamp.ikonli.javafx;\r\n    requires org.kordamp.bootstrapfx.core;\r\n    requires eu.hansolo.tilesfx;\r\n    requires com.almasb.fxgl.all;\r\n\r\n    opens com.example.mahjong to javafx.fxml;\r\n    exports com.example.mahjong;\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/module-info.java b/src/main/java/module-info.java
+--- a/src/main/java/module-info.java	
++++ b/src/main/java/module-info.java	
+@@ -13,4 +13,8 @@
+ 
+     opens com.example.mahjong to javafx.fxml;
+     exports com.example.mahjong;
++    exports com.example.mahjong.client;
++    opens com.example.mahjong.client to javafx.fxml;
++    exports com.mahjong.client;
++    opens com.mahjong.client to javafx.fxml;
+ }
+\ No newline at end of file
+Index: src/main/java/com/mahjong/client/WaitRoomController.java
+===================================================================
+diff --git a/src/main/java/com/mahjong/client/WaitRoomController.java b/src/main/java/com/mahjong/client/WaitRoomController.java
+new file mode 100644
+--- /dev/null	
++++ b/src/main/java/com/mahjong/client/WaitRoomController.java	
+@@ -0,0 +1,72 @@
++package com.mahjong.client;
++
++import javafx.application.Platform;
++import javafx.fxml.FXML;
++import javafx.fxml.FXMLLoader;
++import javafx.scene.Scene;
++import javafx.scene.control.Button;
++import javafx.stage.Stage;
++
++import java.io.*;
++import java.net.Socket;
++
++public class WaitRoomController {
++
++    @FXML
++    private Button returnButton;
++
++
++//    public boolean gameStart = false;
++
++
++    public void initializeNet(Stage stage){
++        new Thread(() -> {
++            try {
++                Socket socket = new Socket("localhost", 8888);
++//                out = new PrintWriter(socket.getOutputStream(), true);
++//                BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
++//            ObjectInputStream oos = new ObjectInputStream(is);
++
++                while (true) {
++                    InputStream is = socket.getInputStream();
++                    DataInputStream dis = new DataInputStream(is);
++                    String msg = dis.readUTF();
++                    if (msg.equals("GameStart")) {
++                        Platform.runLater(() -> {
++                            try {
++                                // 加载游戏界面
++                                FXMLLoader loader = new FXMLLoader(getClass().getResource("gameRoom.fxml"));
++                                Scene gameScene = new Scene(loader.load());
++                                stage.setScene(gameScene);
++
++                                // 传递网络连接给游戏控制器
++                                GameRoomController controller = loader.getController();
++                                controller.setNetwork(socket);
++                                controller.startGame();
++                            } catch (IOException e) {
++                                e.printStackTrace();
++                            }
++                        });
++                        break;
++                    }
++                }
++            } catch (IOException e) {
++                e.printStackTrace();
++            }
++        }).start();
++    }
++
++    // 断开连接
++    @FXML
++    private void handleReturn() throws IOException {
++
++        // 创建游戏主页面的场景和布局
++        FXMLLoader loader = new FXMLLoader(getClass().getResource("menu.fxml"));
++        Scene menuScene = new Scene(loader.load(),600,400);
++
++        // 获取当前窗口并设置新场景
++        Stage stage= (Stage) returnButton.getScene().getWindow();
++        stage.setScene(menuScene);
++    }
++
++}
+Index: src/main/java/com/mahjong/client/GameRoomController.java
+===================================================================
+diff --git a/src/main/java/com/mahjong/client/GameRoomController.java b/src/main/java/com/mahjong/client/GameRoomController.java
+new file mode 100644
+--- /dev/null	
++++ b/src/main/java/com/mahjong/client/GameRoomController.java	
+@@ -0,0 +1,90 @@
++package com.mahjong.client;
++
++import java.io.*;
++import java.net.Socket;
++import java.util.Scanner;
++
++public class GameRoomController {
++
++    public void setNetwork(Socket socket) {
++        //收
++        new Thread(() -> {
++            try {
++                InputStream is = socket.getInputStream();
++//            ObjectInputStream oos = new ObjectInputStream(is);
++                DataInputStream dis = new DataInputStream(is);
++                while (true){
++                    try {
++                        String serverInstruction = dis.readUTF();
++                        System.out.println(serverInstruction);
++
++//                      updateScene(serverInstruction);
++
++                    } catch (Exception e) {
++                        System.out.println(socket.getRemoteSocketAddress() + "自己下线了");
++                        dis.close();
++                        socket.close();
++                        break;
++                    }
++                }
++            } catch (IOException e) {
++                e.printStackTrace();
++            }
++        }).start();
++        //发
++        new Thread(() -> {
++            try {
++                OutputStream os = socket.getOutputStream();
++                // 包装输出流，更高级更好用，玩家操作信息，要发给服务器端
++                DataOutputStream operate = new DataOutputStream(os);
++
++                // 后端测试用，后应接入前端接口接收玩家具体操作信息
++                Scanner sc = new Scanner(System.in);
++                while (true) {
++                    System.out.println(socket.getLocalPort() + " 玩家操作： ");
++                    String playerOperate = sc.nextLine();
++                    if ("exit".equals(playerOperate)){
++                        System.out.println("退出游戏");
++                        operate.close();
++                        socket.close();
++                        break;
++                    }
++                    operate.writeUTF(playerOperate);
++                    operate.flush();
++                }
++            } catch (IOException e) {
++                e.printStackTrace();
++            }
++        }).start();
++    }
++
++    public void startGame() {
++        // 初始化游戏
++        // 例如：初始化玩家分数、牌局等
++        updateGameBoard();
++    }
++
++//    private void processServerMessage(String message) {
++//        Platform.runLater(() -> {
++//            // 根据服务器消息更新UI
++//            if (message.startsWith("UPDATE_SCORE")) {
++//                String[] parts = message.split(" ");
++//                int player1 = Integer.parseInt(parts[1]);
++//                int player2 = Integer.parseInt(parts[2]);
++//                player1Score.setText(String.valueOf(player1));
++//                player2Score.setText(String.valueOf(player2));
++//            } else if (message.startsWith("UPDATE_BOARD")) {
++//                // 更新游戏板
++//                updateGameBoard();
++//            }
++//        });
++//    }
++
++    private void updateGameBoard() {
++        // 根据当前游戏状态更新游戏板
++        // 例如：显示牌、玩家动作等
++//        gameBoard.getChildren().clear();
++//        ImageView tile = new ImageView("path/to/tile/image.png");
++//        gameBoard.getChildren().add(tile);
++    }
++}
+Index: src/main/java/com/mahjong/client/GameRulesController.java
+===================================================================
+diff --git a/src/main/java/com/mahjong/client/GameRulesController.java b/src/main/java/com/mahjong/client/GameRulesController.java
+new file mode 100644
+--- /dev/null	
++++ b/src/main/java/com/mahjong/client/GameRulesController.java	
+@@ -0,0 +1,33 @@
++package com.mahjong.client;
++import com.example.mahjong.client.Client;
++import javafx.fxml.FXML;
++import javafx.fxml.FXMLLoader;
++import javafx.scene.Scene;
++import javafx.scene.control.Button;
++import javafx.stage.Stage;
++
++import java.io.IOException;
++
++public class GameRulesController extends com.example.mahjong.client.Client {
++
++    @FXML
++    private Button returnButton;
++
++    public GameRulesController() throws IOException {
++    }
++
++
++    @FXML
++    private void handleReturn() throws IOException {
++        // TODO: 实现返回上一个页面的逻辑
++        // 假设你有一个方法来加载并显示上一个页面
++        FXMLLoader fxmlLoader = new FXMLLoader(Client.class.getResource("menu.fxml"));
++        Scene menuScene = new Scene(fxmlLoader.load(), 600, 400);
++        // 创建游戏主页面的场景和布局
++
++        // 获取当前窗口并设置新场景
++        Stage stage= (Stage) returnButton.getScene().getWindow();
++        stage.setScene(menuScene);
++    }
++
++}
+Index: src/main/java/com/example/mahjong/client/Client.java
+===================================================================
+diff --git a/src/main/java/com/example/mahjong/client/Client.java b/src/main/java/com/example/mahjong/client/Client.java
+new file mode 100644
+--- /dev/null	
++++ b/src/main/java/com/example/mahjong/client/Client.java	
+@@ -0,0 +1,32 @@
++package com.example.mahjong.client;
++
++import javafx.application.Application;
++
++import javafx.fxml.FXMLLoader;
++import javafx.scene.Scene;
++import javafx.stage.Stage;
++
++import java.io.IOException;
++import java.net.Socket;
++
++public class Client extends Application {
++    //当玩家点击加入游戏与服务端建立通道 ok
++    //两个线程：一个接受服务端的消息，更新画布 ok
++    //另一个向服务端发消息，玩家操作消息 ok
++    //玩家点击相应操作时，就向服务端发消息
++
++    @Override
++    public void start(Stage stage) throws IOException {
++        FXMLLoader fxmlLoader = new FXMLLoader(Client.class.getResource("menu.fxml"));
++        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
++        stage.setTitle("Mahjong");
++        stage.setScene(scene);
++        stage.show();
++
++    }
++
++
++    public static void main(String[] args) {
++        launch();
++    }
++}
+\ No newline at end of file
+Index: src/main/resources/com/example/mahjong/client_fxml/gameRule.fxml
+===================================================================
+diff --git a/src/main/resources/com/example/mahjong/client_fxml/gameRule.fxml b/src/main/resources/com/example/mahjong/client_fxml/gameRule.fxml
+new file mode 100644
+--- /dev/null	
++++ b/src/main/resources/com/example/mahjong/client_fxml/gameRule.fxml	
+@@ -0,0 +1,11 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<?import javafx.scene.control.Button?>
++<?import javafx.scene.control.TextArea?>
++<?import javafx.scene.layout.VBox?>
++<?import javafx.scene.text.Text?>
++
++<VBox fx:id="rulesVBox" alignment="CENTER" spacing="20" xmlns:fx="http://javafx.com/fxml" fx:controller="com.mahjong.client.GameRulesController">
++    <Text text="麻将游戏规则" />
++    <TextArea fx:id="rulesTextArea" text="在这里填写麻将游戏的规则详细信息。" wrapText="true" editable="false" />
++    <Button fx:id="returnButton" text="返回" onAction="#handleReturn" />
++</VBox>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"588d25d2-c6eb-4329-a34e-48d24e4b82c9\" name=\"Changes\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/com/example/mahjong/GameRoomController.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/com/example/mahjong/GameRulesController.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/com/example/mahjong/JoinGameRoomController.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/com/example/mahjong/MenuController.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/com/example/mahjong/gameRoom.fxml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/com/example/mahjong/gameRule.fxml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/com/example/mahjong/joinGameRoom.fxml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/com/example/mahjong/login.fxml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/resources/com/example/mahjong/menu.fxml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/pom.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/pom.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/mahjong/HelloApplication.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/mahjong/Client.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/mahjong/HelloController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/example/mahjong/LoginController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/com/example/mahjong/hello-view.fxml\" beforeDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"FxmlFile\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 1\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2gaKR81MyzqviTwMkNhOH6KkWPL\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\r\n    \"WebServerToolWindowFactoryState\": \"false\",\r\n    \"git-widget-placeholder\": \"master\",\r\n    \"ignore.virus.scanning.warn.message\": \"true\",\r\n    \"last_opened_file_path\": \"C:/Users/董瀚泽/Document/SceneBuilder.exe\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"project.structure.last.edited\": \"Libraries\",\r\n    \"project.structure.proportion\": \"0.0\",\r\n    \"project.structure.side.proportion\": \"0.3207127\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\董瀚泽\\Desktop\\Mahjong\\src\\main\\java\\logic\\rules\" />\r\n      <recent name=\"C:\\Users\\董瀚泽\\Desktop\\Mahjong\\src\\main\\java\\logic\\tiles\" />\r\n      <recent name=\"C:\\Users\\董瀚泽\\Desktop\\Mahjong\\src\\main\\java\\logic\\Tiles\" />\r\n      <recent name=\"C:\\Users\\董瀚泽\\Desktop\\Mahjong\\src\\main\\java\\logic\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"588d25d2-c6eb-4329-a34e-48d24e4b82c9\" name=\"Changes\" comment=\"\" />\r\n      <created>1715930239840</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1715930239840</updated>\r\n      <workItem from=\"1715930240922\" duration=\"1016000\" />\r\n      <workItem from=\"1715996477273\" duration=\"1379000\" />\r\n      <workItem from=\"1715999450297\" duration=\"8403000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -5,20 +5,22 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="588d25d2-c6eb-4329-a34e-48d24e4b82c9" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/mahjong/GameRoomController.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/mahjong/GameRulesController.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/mahjong/JoinGameRoomController.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/mahjong/MenuController.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/mahjong/gameRoom.fxml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/mahjong/gameRule.fxml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/mahjong/joinGameRoom.fxml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/mahjong/login.fxml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/mahjong/menu.fxml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/mahjong/client/Client.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/com/mahjong/client/GameRoomController.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/com/mahjong/client/GameRulesController.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/com/mahjong/client/MenuController.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/java/com/mahjong/client/WaitRoomController.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/mahjong/client_fxml/gameRoom.fxml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/mahjong/client_fxml/gameRoomWait.fxml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/mahjong/client_fxml/gameRule.fxml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mahjong/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mahjong/Client.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mahjong/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/mahjong/LoginController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/mahjong/hello-view.fxml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mahjong/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mahjong/client/Client.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mahjong/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mahjong/client/LoginController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mahjong/MenuController.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/mahjong/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/mahjong/client_fxml/login.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/mahjong/menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/mahjong/client_fxml/menu.fxml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -28,13 +30,20 @@
+   <component name="FileTemplateManagerImpl">
+     <option name="RECENT_TEMPLATES">
+       <list>
+-        <option value="FxmlFile" />
+         <option value="Class" />
+       </list>
+     </option>
+   </component>
+   <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="master" />
++      </map>
++    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++  </component>
++  <component name="ProblemsViewState">
++    <option name="selectedTabId" value="CurrentFile" />
+   </component>
+   <component name="ProjectColorInfo">{
+   &quot;associatedIndex&quot;: 1
+@@ -51,25 +60,33 @@
+     "RunOnceActivity.ShowReadmeOnStart": "true",
+     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+     "WebServerToolWindowFactoryState": "false",
+-    "git-widget-placeholder": "master",
++    "git-widget-placeholder": "Eric",
+     "ignore.virus.scanning.warn.message": "true",
+-    "last_opened_file_path": "C:/Users/董瀚泽/Document/SceneBuilder.exe",
++    "last_directory_selection": "D:/Mahjong/src/main/java/com",
++    "last_opened_file_path": "D:/Mahjong/src/main/java/com/example/mahjong",
+     "node.js.detected.package.eslint": "true",
+     "node.js.detected.package.tslint": "true",
+     "node.js.selected.package.eslint": "(autodetect)",
+     "node.js.selected.package.tslint": "(autodetect)",
+-    "project.structure.last.edited": "Libraries",
+-    "project.structure.proportion": "0.0",
++    "project.structure.last.edited": "模块",
++    "project.structure.proportion": "0.15",
+     "project.structure.side.proportion": "0.3207127",
+     "vue.rearranger.settings.migration": "true"
+   }
+ }]]></component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
++      <recent name="D:\Mahjong\src\main\java\com\example\mahjong" />
++      <recent name="D:\Mahjong\src\main\resources\com\example\mahjong" />
+       <recent name="C:\Users\董瀚泽\Desktop\Mahjong\src\main\java\logic\rules" />
+       <recent name="C:\Users\董瀚泽\Desktop\Mahjong\src\main\java\logic\tiles" />
+       <recent name="C:\Users\董瀚泽\Desktop\Mahjong\src\main\java\logic\Tiles" />
+-      <recent name="C:\Users\董瀚泽\Desktop\Mahjong\src\main\java\logic" />
++    </key>
++    <key name="MoveFile.RECENT_KEYS">
++      <recent name="D:\Mahjong\src\main\resources\com\example\mahjong\client_fxml" />
++    </key>
++    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
++      <recent name="com.example.mahjong" />
+     </key>
+   </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+@@ -82,7 +99,6 @@
+       <updated>1715930239840</updated>
+       <workItem from="1715930240922" duration="1016000" />
+       <workItem from="1715996477273" duration="1379000" />
+-      <workItem from="1715999450297" duration="8403000" />
+     </task>
+     <servers />
+   </component>
