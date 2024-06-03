@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" fx:controller="com.example.mahjong.MenuController" spacing="20" xmlns:fx="http://javafx.com/fxml">
+    <Text text="麻将游戏" />
+    <Button text="创建房间" fx:id="createRoomButton" onAction="#handleCreateRoom" />
+    <Button text="加入房间" fx:id="joinRoomButton" onAction="#handleJoinRoom" />
+    <Button text="游戏规则" fx:id="gameRulesButton" onAction="#handleGameRules" />
+    <Button text="退出游戏" fx:id="exitGameButton" onAction="#handleExitGame" />
+</VBox>
