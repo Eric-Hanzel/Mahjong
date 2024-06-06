@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="588d25d2-c6eb-4329-a34e-48d24e4b82c9" name="Changes" comment="完成基本登陆页面">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/_2024_6_4_1_14___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/_2024_6_4_1_14___Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/_2024_6_4_1_14___Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/_2024_6_4_1_14___Changes_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/_2024_6_4_1_16___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/_2024_6_4_1_16___Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mmahjong/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mmahjong/server/Server.java" afterDir="false" />
-    </list>
+    <list default="true" id="588d25d2-c6eb-4329-a34e-48d24e4b82c9" name="Changes" comment="完成基本登陆页面" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,7 +21,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Eric" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -39,12 +32,12 @@
     &quot;assignee&quot;: &quot;Eric-Hanzel&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Eric-Hanzel/Mahjong.git",
-    "accountId": "542dc10e-4146-43b8-8b30-d7f246a6e922"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Eric-Hanzel/Mahjong.git&quot;,
+    &quot;accountId&quot;: &quot;542dc10e-4146-43b8-8b30-d7f246a6e922&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -63,7 +56,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "hejinzhanshi",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/86187/Desktop/FINAL_Assignment",
@@ -128,7 +121,7 @@
       <workItem from="1715996477273" duration="1379000" />
       <workItem from="1715999450297" duration="9130000" />
       <workItem from="1717467966239" duration="618000" />
-      <workItem from="1717691075256" duration="640000" />
+      <workItem from="1717691075256" duration="1025000" />
     </task>
     <task id="LOCAL-00001" summary="完成基本登陆页面">
       <option name="closed" value="true" />
@@ -154,7 +147,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717436669586</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="完成基本登陆页面">
+      <option name="closed" value="true" />
+      <created>1717692079606</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1717692079606</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
