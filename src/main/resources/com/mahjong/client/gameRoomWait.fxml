@@ -10,4 +10,8 @@
     </VBox.margin>
     <Label text="等待玩家加入..." />
     <Button fx:id="returnButton" text="返回" onAction="#handleReturn" />
+<<<<<<< HEAD
 </VBox>
+=======
+</VBox>
+>>>>>>> origin/master

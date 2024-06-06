@@ -10,7 +10,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
+<<<<<<< HEAD:src/main/resources/com/example/mahjong/login.fxml
 <VBox alignment="CENTER" spacing="10" fx:controller="com.example.mahjong.LoginController" xmlns:fx="http://javafx.com/fxml">
+=======
+<VBox alignment="CENTER" spacing="10" fx:controller="com.mahjong.client.LoginController" xmlns:fx="http://javafx.com/fxml">
+>>>>>>> origin/master:src/main/resources/com/mahjong/client/login.fxml
   <Text text="游戏登录" />
   <GridPane hgap="10" vgap="10" alignment="CENTER">
     <Label text="用户名:" GridPane.columnIndex="0" GridPane.rowIndex="0" />

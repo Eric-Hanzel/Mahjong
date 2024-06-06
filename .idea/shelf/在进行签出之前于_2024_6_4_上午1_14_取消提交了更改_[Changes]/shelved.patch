@@ -1,0 +1,482 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"588d25d2-c6eb-4329-a34e-48d24e4b82c9\" name=\"Changes\" comment=\"完成服务端的编写\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/mahjong/HelloApplication.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/example/mahjong/HelloController.java\" beforeDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"FxmlFile\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"heijinzhanshi\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;hejinzhanshi&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/Eric-Hanzel/Mahjong.git&quot;,\r\n    &quot;accountId&quot;: &quot;542dc10e-4146-43b8-8b30-d7f246a6e922&quot;\r\n  }\r\n}</component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"mavenHomeTypeForPersistence\" value=\"WRAPPER\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"ProjectErrors\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 1\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2gaKR81MyzqviTwMkNhOH6KkWPL\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;hejinzhanshi&quot;,\r\n    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/86187/Desktop/server&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.3207127&quot;,\r\n    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;,\r\n    &quot;应用程序.Server.executor&quot;: &quot;Run&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\董瀚泽\\Desktop\\Mahjong\\src\\main\\java\\logic\\rules\" />\r\n      <recent name=\"C:\\Users\\董瀚泽\\Desktop\\Mahjong\\src\\main\\java\\logic\\tiles\" />\r\n      <recent name=\"C:\\Users\\董瀚泽\\Desktop\\Mahjong\\src\\main\\java\\logic\\Tiles\" />\r\n      <recent name=\"C:\\Users\\董瀚泽\\Desktop\\Mahjong\\src\\main\\java\\logic\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17011.79\" />\r\n        <option value=\"bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17011.79\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"588d25d2-c6eb-4329-a34e-48d24e4b82c9\" name=\"Changes\" comment=\"\" />\r\n      <created>1715930239840</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1715930239840</updated>\r\n      <workItem from=\"1715930240922\" duration=\"1016000\" />\r\n      <workItem from=\"1715996477273\" duration=\"1379000\" />\r\n      <workItem from=\"1715999450297\" duration=\"8403000\" />\r\n      <workItem from=\"1716658439272\" duration=\"1009000\" />\r\n      <workItem from=\"1716659457601\" duration=\"2087000\" />\r\n      <workItem from=\"1716661680163\" duration=\"352000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"完成服务端的编写\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1716660728025</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1716660728026</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"heijinzhanshi\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"完成服务端的编写\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"完成服务端的编写\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -4,10 +4,45 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="588d25d2-c6eb-4329-a34e-48d24e4b82c9" name="Changes" comment="完成服务端的编写">
++    <list default="true" id="588d25d2-c6eb-4329-a34e-48d24e4b82c9" name="Changes" comment="服务端&#10;&#10;Signed-off-by: hejinzhanshi &lt;xlion6699@163.com&gt;">
++      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/1Bamboo.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/1Character.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/1Dot.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/2Bamboo.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/2Character.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/2Dot.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/3Bamboo.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/3Character.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/3Dot.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/4Bamboo.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/4Character.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/4Dot.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/5Bamboo.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/5Character.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/5Dot.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/6Bamboo.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/6Character.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/6Dot.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/7Bamboo.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/7Character.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/7Dot.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/8Bamboo.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/8Character.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/8Dot.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/9Bamboo.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/9Character.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/9Dot.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/East.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/Green.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/North.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/Red.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/South.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/West.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/White.png" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024_5_22_16_18_[Changes]/shelved.patch" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024_5_22_16_18__Changes_.xml" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mahjong/HelloApplication.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mahjong/HelloController.java" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/mmahjong/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mmahjong/server/Server.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -23,12 +58,18 @@
+     </option>
+   </component>
+   <component name="Git.Settings">
++    <option name="PREVIOUS_COMMIT_AUTHORS">
++      <list>
++        <option value="hejinzhanshi &lt;xlion6699@163.com&gt;" />
++      </list>
++    </option>
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+         <entry key="$PROJECT_DIR$" value="heijinzhanshi" />
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++    <option name="SIGN_OFF_COMMIT" value="true" />
+   </component>
+   <component name="GitHubPullRequestSearchHistory">{
+   &quot;lastFilter&quot;: {
+@@ -61,31 +102,32 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;hejinzhanshi&quot;,
+-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;C:/Users/86187/Desktop/server&quot;,
+-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+-    &quot;project.structure.side.proportion&quot;: &quot;0.3207127&quot;,
+-    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;,
+-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;,
+-    &quot;应用程序.Server.executor&quot;: &quot;Run&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
++    "WebServerToolWindowFactoryState": "false",
++    "git-widget-placeholder": "hejinzhanshi",
++    "ignore.virus.scanning.warn.message": "true",
++    "kotlin-language-version-configured": "true",
++    "last_opened_file_path": "C:/Users/86187/Desktop/新建文件夹/MahjongNB/src/main/resources/tiles",
++    "node.js.detected.package.eslint": "true",
++    "node.js.detected.package.tslint": "true",
++    "node.js.selected.package.eslint": "(autodetect)",
++    "node.js.selected.package.tslint": "(autodetect)",
++    "nodejs_package_manager_path": "npm",
++    "project.structure.last.edited": "SDK",
++    "project.structure.proportion": "0.0",
++    "project.structure.side.proportion": "0.3207127",
++    "settings.editor.selected.configurable": "inlay.hints",
++    "vue.rearranger.settings.migration": "true",
++    "应用程序.Server.executor": "Run"
+   }
+-}</component>
++}]]></component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
++      <recent name="C:\Users\86187\Desktop\新建文件夹\MahjongNB\src\main\resources\tiles" />
+       <recent name="C:\Users\董瀚泽\Desktop\Mahjong\src\main\java\logic\rules" />
+       <recent name="C:\Users\董瀚泽\Desktop\Mahjong\src\main\java\logic\tiles" />
+       <recent name="C:\Users\董瀚泽\Desktop\Mahjong\src\main\java\logic\Tiles" />
+@@ -114,6 +156,9 @@
+       <workItem from="1716658439272" duration="1009000" />
+       <workItem from="1716659457601" duration="2087000" />
+       <workItem from="1716661680163" duration="352000" />
++      <workItem from="1717383428723" duration="1279000" />
++      <workItem from="1717397132539" duration="625000" />
++      <workItem from="1717431899046" duration="2723000" />
+     </task>
+     <task id="LOCAL-00001" summary="完成服务端的编写">
+       <option name="closed" value="true" />
+@@ -123,7 +168,39 @@
+       <option name="project" value="LOCAL" />
+       <updated>1716660728026</updated>
+     </task>
+-    <option name="localTasksCounter" value="2" />
++    <task id="LOCAL-00002" summary="完成服务端的编写">
++      <option name="closed" value="true" />
++      <created>1716789269835</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1716789269835</updated>
++    </task>
++    <task id="LOCAL-00003" summary="服务端">
++      <option name="closed" value="true" />
++      <created>1716789340558</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1716789340558</updated>
++    </task>
++    <task id="LOCAL-00004" summary="服务端">
++      <option name="closed" value="true" />
++      <created>1716789398911</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1716789398911</updated>
++    </task>
++    <task id="LOCAL-00005" summary="服务端&#10;&#10;Signed-off-by: hejinzhanshi &lt;xlion6699@163.com&gt;">
++      <option name="closed" value="true" />
++      <created>1716789547636</created>
++      <option name="number" value="00005" />
++      <option name="presentableId" value="LOCAL-00005" />
++      <option name="project" value="LOCAL" />
++      <updated>1716789547636</updated>
++    </task>
++    <option name="localTasksCounter" value="6" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -140,7 +217,7 @@
+                   <entry key="branch">
+                     <value>
+                       <list>
+-                        <option value="heijinzhanshi" />
++                        <option value="hejinzhanshi" />
+                       </list>
+                     </value>
+                   </entry>
+@@ -154,6 +231,11 @@
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="完成服务端的编写" />
+-    <option name="LAST_COMMIT_MESSAGE" value="完成服务端的编写" />
++    <MESSAGE value="服务端" />
++    <MESSAGE value="服务端&#10;&#10;Signed-off-by: hejinzhanshi &lt;xlion6699@163.com&gt;" />
++    <option name="LAST_COMMIT_MESSAGE" value="服务端&#10;&#10;Signed-off-by: hejinzhanshi &lt;xlion6699@163.com&gt;" />
++    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
++    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
++    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: src/main/java/com/mmahjong/server/Server.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.mmahjong.server;\r\n\r\nimport java.io.*;\r\nimport java.net.ServerSocket;\r\nimport java.net.Socket;\r\nimport java.util.ArrayList;\r\n\r\npublic class Server {\r\n\r\n    public static ArrayList<Socket> onLineSocket = new ArrayList<>();\r\n\r\n    public static void main(String[] args) throws Exception {\r\n        System.out.println(\"----------服务端启动----------\");\r\n        ServerSocket serverSocket = new ServerSocket(8888);\r\n        // 分发消息\r\n        while (true) {\r\n            Socket socket = serverSocket.accept();\r\n            onLineSocket.add(socket);\r\n            System.out.println(socket.getRemoteSocketAddress() + \"上线了\");\r\n            System.out.println(onLineSocket);\r\n            if (onLineSocket.size()==4){\r\n                for (Socket onLineSocket : Server.onLineSocket) {\r\n                    OutputStream os = onLineSocket.getOutputStream();\r\n                    DataOutputStream dos = new DataOutputStream(os);\r\n                    dos.writeUTF(\"GameStart\");\r\n                    dos.flush();\r\n                }\r\n            }\r\n            // GameStart();\r\n            new ServerReaderThread(socket).start();\r\n        }\r\n\r\n    }\r\n\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/com/mmahjong/server/Server.java b/src/main/java/com/mmahjong/server/Server.java
+--- a/src/main/java/com/mmahjong/server/Server.java	
++++ b/src/main/java/com/mmahjong/server/Server.java	
+@@ -1,35 +1,248 @@
+ package com.mmahjong.server;
+ 
++import logic.gameManagement.Game;
++import logic.players.Player;
++
+ import java.io.*;
+ import java.net.ServerSocket;
+ import java.net.Socket;
+ import java.util.ArrayList;
++import java.util.Objects;
++import java.util.concurrent.ExecutorService;
++import java.util.concurrent.Executors;
++import java.util.concurrent.ScheduledExecutorService;
++import java.util.logging.Level;
++import java.util.logging.Logger;
+ 
+ public class Server {
++    private static final Logger logger = Logger.getLogger(Server.class.getName());
++    private static ServerSocket serverSocket;
++    private static ArrayList<ObjectOutputStream> outputs = new ArrayList<>();
++    public static final ArrayList<Socket> onLineSocket = new ArrayList<>();
++    public static int count = 0;
++    private static int skipNumber = 0;
++    public static volatile boolean gameStart = false;
++    public static boolean gameOver = false;
++
++    public static void main(String[] args) throws IOException {
++        serverSocket = new ServerSocket(8888);
++        System.out.println("服务器启动，等待客户端连接...");
+ 
+-    public static ArrayList<Socket> onLineSocket = new ArrayList<>();
++        new Thread(new AcceptClients()).start();
+ 
+-    public static void main(String[] args) throws Exception {
+-        System.out.println("----------服务端启动----------");
+-        ServerSocket serverSocket = new ServerSocket(8888);
+-        // 分发消息
+-        while (true) {
+-            Socket socket = serverSocket.accept();
+-            onLineSocket.add(socket);
+-            System.out.println(socket.getRemoteSocketAddress() + "上线了");
+-            System.out.println(onLineSocket);
+-            if (onLineSocket.size()==4){
+-                for (Socket onLineSocket : Server.onLineSocket) {
+-                    OutputStream os = onLineSocket.getOutputStream();
+-                    DataOutputStream dos = new DataOutputStream(os);
+-                    dos.writeUTF("GameStart");
+-                    dos.flush();
++        while (!gameStart) {
++            Thread.onSpinWait();
++        }
++        System.out.println("游戏启动");
++        logger.info("玩家列表初始化已发送给所有客户端。");
++        for (ObjectOutputStream oos : outputs) {
++            ArrayList<Player> players = new ArrayList<>(Game.playerList);
++            oos.writeObject(players);
++            oos.flush();
++        }
++    }
++
++    private static class AcceptClients implements Runnable{
++        @Override
++        public void run(){
++            logger.info("Accept线程启动");
++            while (true) {
++                try {
++                    Socket socket = serverSocket.accept();
++                    onLineSocket.add(socket);
++                    logger.info(""+socket);
++                    outputs.add(new ObjectOutputStream(socket.getOutputStream()));
++                    logger.info("客户端已连接: " + socket.getRemoteSocketAddress());
++                    logger.info("当前在线客户端: " + onLineSocket.size());
++                    if (onLineSocket.size() == 4) {
++                        for (ObjectOutputStream oos : outputs){
++                            oos.writeUTF("GameStart");
++                            oos.flush();
++                        }
++                        Game.init(onLineSocket);
++                        gameStart = true;
++                        logger.info("玩家列表: " + Game.playerList);
++                        for (Socket socket1: onLineSocket){
++                            new HandleClient(socket1,socket1.getRemoteSocketAddress().toString()).start();
++                        }
++                    }
++                }catch (Exception e){
++                    e.printStackTrace();
++                }
++            }
++        }
++    }
++
++    private static class HandleClient extends Thread{
++        private Socket client;
++        private String clientId;
++        private ObjectInputStream input;
++
++
++        public HandleClient(Socket client, String clientId){
++            this.client = client;
++            this.clientId = clientId;
++            try {
++                this.input = new ObjectInputStream(client.getInputStream());
++            } catch (IOException e) {
++                e.printStackTrace();
++            }
++        }
++
++        @Override
++        public void run(){
++            try {
++                while (true){
++                    //合法非法操作判定，根据turn,非法操作单发。
++//                    if (Game.checkState){
++//                        Object message = input.readObject();
++//
++//                    }else {
++//                        Object message = input.readObject();
++//                        if (message instanceof String){
++//                            String operate = (String) message;
++//                            logger.info(clientId + " 操作: " + message);
++//                            //吃，碰杠阶段
++//                            if (Game.checkLegal(clientId,operate)){
++//                                Game.logicOperate(clientId, operate);
++//                                ArrayList<Player> players = new ArrayList<>(Game.playerList);
++//                                sendToAllClient(players);
++//                            }else {
++//                                sendToOneClient(client);
++//                            }
++//                        }
++//                    }
++
++                    logger.info(client+"启动成功");
++                    Object message = input.readObject();
++                    if (message instanceof String){
++                        String operate = (String) message;
++                        logger.info(clientId + "操作: " + message);
++                        //吃，碰明杠阶段
++                        if (Game.checkState){
++                            //收集玩家操作，处理碰杠和跳，约10秒状态自动结束，
++                            if (Game.checkLegal(clientId,operate)){
++                                //如果是跳，返回接受，并检查人数，满三结束checkstate并告知所有人,顺延玩家
++                                Player player = null;
++                                for (Player p : Game.playerList){
++                                    if (Objects.equals(p.getName(), clientId)){
++                                        player = p;
++                                        break;
++                                    }
++                                }
++                                if (operate.equals("Skip") && !player.getSkip()){
++                                    skipNumber++;
++                                    System.out.println(skipNumber);
++                                }
++                                if (Objects.equals(Game.logicOperate(clientId, operate), "Skip")){
++                                    sendToOneClient(client,"skipAccept");
++                                    if (skipNumber == 3){
++                                        System.out.println("Over");
++                                        Game.resetAllSkip();
++                                        skipNumber = 0;
++                                        Game.checkState = false;
++                                        Game.changePlayer();
++                                        sendToAllClient("checkStateOver");
++                                        ArrayList<Player> players = new ArrayList<>(Game.playerList);
++                                        sendToAllClient(players);
++                                    }
++                                    //有人碰或杠
++                                }else {
++                                    ArrayList<Player> players = new ArrayList<>(Game.playerList);
++                                    sendToAllClient(players);
++                                }
++                                //退出checkState
++                            }else {
++                                sendToOneClient(client,"illegal");
++                            }
++
++                        }else {
++                            //摸牌和出牌阶段，暗杠
++                            if (Game.checkLegal(clientId,operate)){
++                                if (Objects.equals(Game.logicOperate(clientId, operate), "Chow")){
++                                    Player player = null;
++                                    for (Player p : Game.playerList){
++                                        if (Objects.equals(p.getName(), clientId)){
++                                            player = p;
++                                            break;
++                                        }
++                                    }
++                                    String chowTypes = player.getHandTile().chowTypes(Game.endDiscardTile);
++                                    sendToOneClient(client,chowTypes);
++                                }else {
++                                    ArrayList<Player> players = new ArrayList<>(Game.playerList);
++                                    sendToAllClient(players);
++                                }
++                            }else {
++                                sendToOneClient(client,"illegal");
++                            }
++                        }
++                    }
++                }
++            }catch (Exception e){
++                e.printStackTrace();
++            }
++        }
++        //gai'xie
++        private void sendToOneClient(Socket socket,String string) {
++            try {
++                String[] parts = string.split(" ");
++                for (Socket socket1:onLineSocket){
++                    if (socket == socket1) {
++                        ObjectOutputStream oos = outputs.get(onLineSocket.indexOf(socket));
++                        if (string.equals("illegal")) {
++                            oos.reset();
++                            oos.writeObject("!!!!!!非法操作!!!!!!一概禁止!!!!!!");
++                            oos.flush();
++                            logger.info("玩家非法操作");
++                        } else if (string.equals("skipAccept")) {
++                            oos.reset();
++                            oos.writeObject("skipAccept");
++                            oos.flush();
++                            logger.info("skipAccept");
++                        } else if (string.equals("checkStateOver")){
++                            oos.reset();
++                            oos.writeObject("checkStateOver");
++                            oos.flush();
++                            logger.info("checkStateOver");
++                        } else if (Objects.equals(parts[0], "chowTypes")){
++                            oos.reset();
++                            oos.writeObject(string);
++                            oos.flush();
++                        }
++                    }
++                }
++            }catch (Exception e){
++                e.printStackTrace();
++            }
++        }
++
++        private void sendToAllClient(ArrayList<Player> playerList) {
++            try {
++                for (ObjectOutputStream oos: outputs) {
++                    oos.reset();
++                    oos.writeObject(playerList);
++                    oos.flush();
+                 }
++                logger.info("玩家列表更新已发送给所有客户端。");
++            }catch (Exception e){
++                e.printStackTrace();
+             }
+-            // GameStart();
+-            new ServerReaderThread(socket).start();
++        }
++        private void sendToAllClient(String s) {
++            try {
++                for (ObjectOutputStream oos: outputs) {
++                    oos.reset();
++                    oos.writeObject(s);
++                    oos.flush();
++                }
++                logger.info("checkstate更新已发送给所有客户端。");
++            }catch (Exception e){
++                e.printStackTrace();
++            }
+         }
+ 
+     }
++
+ 
+ }

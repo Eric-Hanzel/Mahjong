@@ -21,7 +21,11 @@ public class GameRulesController extends Client{
         // TODO: 实现返回上一个页面的逻辑
         // 假设你有一个方法来加载并显示上一个页面
         FXMLLoader fxmlLoader = new FXMLLoader(Client.class.getResource("menu.fxml"));
+<<<<<<< HEAD
         Scene menuScene = new Scene(fxmlLoader.load(), 1000, 800);
+=======
+        Scene menuScene = new Scene(fxmlLoader.load(), 600, 400);
+>>>>>>> origin/master
         // 创建游戏主页面的场景和布局
 
         // 获取当前窗口并设置新场景
@@ -29,4 +33,8 @@ public class GameRulesController extends Client{
         stage.setScene(menuScene);
     }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/master

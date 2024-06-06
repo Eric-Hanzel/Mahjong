@@ -1,0 +1,82 @@
+Index: src/main/resources/com/example/mahjong/menu.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/com/example/mahjong/menu.fxml b/src/main/resources/com/mahjong/client/menu.fxml
+rename from src/main/resources/com/example/mahjong/menu.fxml
+rename to src/main/resources/com/mahjong/client/menu.fxml
+--- a/src/main/resources/com/example/mahjong/menu.fxml	
++++ b/src/main/resources/com/mahjong/client/menu.fxml	
+@@ -3,7 +3,11 @@
+ <?import javafx.scene.layout.VBox?>
+ <?import javafx.scene.text.Text?>
+ 
++<<<<<<< HEAD:src/main/resources/com/example/mahjong/menu.fxml
+ <VBox alignment="CENTER" fx:controller="com.example.mahjong.MenuController" spacing="20" xmlns:fx="http://javafx.com/fxml">
++=======
++<VBox alignment="CENTER" fx:controller="com.mahjong.client.MenuController" spacing="20" xmlns:fx="http://javafx.com/fxml">
++>>>>>>> 4e503a0 (完成基本登陆页面):src/main/resources/com/mahjong/client/menu.fxml
+     <Text text="麻将游戏" />
+     <Button text="创建房间" fx:id="createRoomButton" onAction="#handleCreateRoom" />
+     <Button text="加入房间" fx:id="joinRoomButton" onAction="#handleJoinRoom" />
+Index: src/main/resources/com/example/mahjong/login.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/com/example/mahjong/login.fxml b/src/main/resources/com/mahjong/client/login.fxml
+rename from src/main/resources/com/example/mahjong/login.fxml
+rename to src/main/resources/com/mahjong/client/login.fxml
+--- a/src/main/resources/com/example/mahjong/login.fxml	
++++ b/src/main/resources/com/mahjong/client/login.fxml	
+@@ -10,7 +10,7 @@
+ <?import javafx.scene.layout.VBox?>
+ <?import javafx.scene.text.Text?>
+ 
+-<VBox alignment="CENTER" spacing="10" fx:controller="com.example.mahjong.LoginController" xmlns:fx="http://javafx.com/fxml">
++<VBox alignment="CENTER" spacing="10" fx:controller="com.mahjong.client.LoginController" xmlns:fx="http://javafx.com/fxml">
+   <Text text="游戏登录" />
+   <GridPane hgap="10" vgap="10" alignment="CENTER">
+     <Label text="用户名:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+Index: src/main/resources/com/example/mahjong/hello-view.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/com/example/mahjong/hello-view.fxml b/src/main/resources/com/mahjong/client/hello-view.fxml
+rename from src/main/resources/com/example/mahjong/hello-view.fxml
+rename to src/main/resources/com/mahjong/client/hello-view.fxml
+--- a/src/main/resources/com/example/mahjong/hello-view.fxml	
++++ b/src/main/resources/com/mahjong/client/hello-view.fxml	
+@@ -6,7 +6,7 @@
+ 
+ <?import javafx.scene.control.Button?>
+ <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+-      fx:controller="com.example.mahjong.HelloController">
++      fx:controller="com.mahjong.client.HelloController">
+   <padding>
+     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+   </padding>
+Index: src/main/resources/com/example/mahjong/joinGameRoom.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/com/example/mahjong/joinGameRoom.fxml b/src/main/resources/com/mahjong/client/joinGameRoom.fxml
+rename from src/main/resources/com/example/mahjong/joinGameRoom.fxml
+rename to src/main/resources/com/mahjong/client/joinGameRoom.fxml
+--- a/src/main/resources/com/example/mahjong/joinGameRoom.fxml	
++++ b/src/main/resources/com/mahjong/client/joinGameRoom.fxml	
+@@ -4,7 +4,11 @@
+ <?import javafx.scene.text.*?>
+ <?import javafx.geometry.*?>
+ 
++<<<<<<< HEAD:src/main/resources/com/example/mahjong/joinGameRoom.fxml
+ <AnchorPane fx:controller="com.example.mahjong.JoinGameRoomController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
++=======
++<AnchorPane fx:controller="com.mahjong.client.JoinGameRoomController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
++>>>>>>> 4e503a0 (完成基本登陆页面):src/main/resources/com/mahjong/client/joinGameRoom.fxml
+     <children>
+         <VBox alignment="CENTER" layoutX="200.0" layoutY="100.0" spacing="20.0">
+             <children>
