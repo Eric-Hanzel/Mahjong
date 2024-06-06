@@ -41,8 +41,5 @@ public class ServerReaderThread extends Thread{
             dos.writeUTF(msg);
             dos.flush();
         }
-
-
-
     }
 }
