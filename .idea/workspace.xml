@@ -5,81 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="588d25d2-c6eb-4329-a34e-48d24e4b82c9" name="Changes" comment="完成基本登陆页面">
-      <changelist_data name="jiawei0825" email="" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mahjong/client/GameRoomController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mahjong/client/GameRulesController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mahjong/client/MenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mahjong/client/WaitRoomController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mmahjong/server/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mmahjong/server/ServerReaderThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/mahjong/client/gameRoom.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/mahjong/client/gameRoomWait.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/mahjong/client/gameRule.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/music/m1.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/music/m2.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/music/m3.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/1Bamboo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/1Character.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/1Dot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/2Bamboo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/2Character.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/2Dot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/3Bamboo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/3Character.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/3Dot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/4Bamboo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/4Character.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/4Dot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/5Bamboo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/5Character.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/5Dot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/6Bamboo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/6Character.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/6Dot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/7Bamboo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/7Character.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/7Dot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/8Bamboo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/8Character.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/8Dot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/9Bamboo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/9Character.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/9Dot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/East.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/Green.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/North.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/Red.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/South.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/West.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/White.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/gameManagement/EventsListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/gameManagement/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/gameManagement/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/gameManagement/GameScreen.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/gameStage/DirectoryStage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/gameStage/EndStage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/gameStage/PreparatoryStage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/gameStage/RunStage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/players/Ai.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/players/Ai.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/players/GameRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/players/GameRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/players/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/players/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/rules/Rule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/rules/Rule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/rules/VictoryRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/rules/VictoryRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/rules/test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/rules/test1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/tiles/BambooTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/tiles/BambooTile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/tiles/CharacterTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/tiles/CharacterTile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/tiles/DotTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/tiles/DotTile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/tiles/HandTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/tiles/HandTile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/tiles/HonorTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/tiles/HonorTile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/tiles/LibraryTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/tiles/LibraryTile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/tiles/PlayedTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/tiles/PlayedTile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/tiles/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/tiles/Tile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/tiles/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/tiles/test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/mahjong/menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/mahjong/client/menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/mahjong/client/gameRule.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/mahjong/client/gameRule.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,6 +99,7 @@
       <workItem from="1715930240922" duration="1016000" />
       <workItem from="1715996477273" duration="1379000" />
       <workItem from="1715999450297" duration="9130000" />
+      <workItem from="1717721098114" duration="4000" />
     </task>
     <task id="LOCAL-00001" summary="完成基本登陆页面">
       <option name="closed" value="true" />
@@ -221,6 +150,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="更改项目结构" />
     <MESSAGE value="完成基本登陆页面" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成基本登陆页面" />
+    <MESSAGE value="finish" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish" />
   </component>
 </project>
