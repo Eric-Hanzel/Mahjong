@@ -4,116 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="588d25d2-c6eb-4329-a34e-48d24e4b82c9" name="Changes" comment="完成基本登陆页面">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mahjong/client/GameRoomController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mahjong/client/GameRulesController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mahjong/client/MenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mahjong/client/OverRoomController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mahjong/client/WaitRoomController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mmahjong/server/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/factories/DoubleArrayListFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/factories/NonSequenceTilesFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/factories/SequenceTilesFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/factories/SingleArrayListFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/factories/TilesFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/factories/TilesFactoryProducer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/factories/TilesSetsFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/factories/TilesSetsFactoryProducer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/factories/test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/games/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/rules/PlayerOperateCheckRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/rules/VictoryCheckRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/tiles/NonSequenceDecorator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/tiles/SequenceDecorator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/tilesSets/DoubleArrayListTileDecorator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/tilesSets/HandTileSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/tilesSets/LibraryTileSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/tilesSets/LockedTileSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/tilesSets/PlayedTileSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/tilesSets/SingleArrayListTileDecorator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/logic/tilesSets/TileSet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/mahjong/client/gameRoom.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/mahjong/client/gameRoomWait.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/mahjong/client/gameRule.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/mahjong/client/menu.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/mahjong/client/overRoom.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/backGround.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/music/m1.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/music/m2.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/music/m3.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/1Bamboo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/1Character.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/1Dot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/2Bamboo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/2Character.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/2Dot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/3Bamboo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/3Character.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/3Dot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/4Bamboo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/4Character.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/4Dot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/5Bamboo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/5Character.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/5Dot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/6Bamboo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/6Character.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/6Dot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/7Bamboo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/7Character.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/7Dot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/8Bamboo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/8Character.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/8Dot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/9Bamboo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/9Character.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/9Dot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/East.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/Green.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/North.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/Red.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/South.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/West.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/White.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/tileBack.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mahjong/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mahjong/client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mahjong/JoinGameRoomController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mahjong/LoginController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/mahjong/MenuController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/account/LoginIn.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/account/SignIn.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/data/GetData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/data/LogData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/gameManagement/EventsListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/gameManagement/Game.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/gameManagement/GameScreen.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/gameStage/DirectoryStage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/gameStage/EndStage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/gameStage/PreparatoryStage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/gameStage/RunStage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/players/Ai.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/players/GameRole.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/players/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/players/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/rules/Rule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/rules/Rule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/rules/ScoringRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/rules/ScoringRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/rules/VictoryRule.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/rules/test1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/tiles/BambooTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/tiles/BambooTile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/tiles/CharacterTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/tiles/CharacterTile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/tiles/DotTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/tiles/DotTile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/tiles/HandTile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/tiles/HonorTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/tiles/HonorTile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/tiles/LibraryTile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/tiles/PlayedTile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/tiles/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logic/tiles/Tile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/tiles/TileSet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logic/tiles/test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/mahjong/joinGameRoom.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/mahjong/login.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/mahjong/menu.fxml" beforeDir="false" />
+    <list default="true" id="588d25d2-c6eb-4329-a34e-48d24e4b82c9" name="Changes" comment="终版">
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/mahjong/client/GameRule.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/mahjong/client/GameRule.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,6 +21,12 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="Eric" />
@@ -160,8 +58,8 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.3207127",
     "vue.rearranger.settings.migration": "true"
   }
@@ -185,6 +83,7 @@
       <workItem from="1715930240922" duration="1016000" />
       <workItem from="1715996477273" duration="1379000" />
       <workItem from="1715999450297" duration="9130000" />
+      <workItem from="1717886234257" duration="645000" />
     </task>
     <task id="LOCAL-00001" summary="完成基本登陆页面">
       <option name="closed" value="true" />
@@ -202,7 +101,47 @@
       <option name="project" value="LOCAL" />
       <updated>1716009034832</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="完成基本登陆页面">
+      <option name="closed" value="true" />
+      <created>1717885661444</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1717885661444</updated>
+    </task>
+    <task id="LOCAL-00004" summary="终版">
+      <option name="closed" value="true" />
+      <created>1717886528788</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1717886528788</updated>
+    </task>
+    <task id="LOCAL-00005" summary="终版">
+      <option name="closed" value="true" />
+      <created>1717886659288</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1717886659288</updated>
+    </task>
+    <task id="LOCAL-00006" summary="终版">
+      <option name="closed" value="true" />
+      <created>1717886763198</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1717886763198</updated>
+    </task>
+    <task id="LOCAL-00007" summary="终版">
+      <option name="closed" value="true" />
+      <created>1717886882440</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1717886882440</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,8 +172,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="更改项目结构" />
+    <MESSAGE value="Merge branch 'master' of https://github.com/Eric-Hanzel/Mahjong&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;pom.xml&#10;#&#9;src/main/java/com/mahjong/client/Client.java&#10;#&#9;src/main/java/com/mahjong/client/GameRoomController.java&#10;#&#9;src/main/java/com/mahjong/client/GameRulesController.java&#10;#&#9;src/main/java/com/mahjong/client/MenuController.java&#10;#&#9;src/main/java/com/mahjong/client/OverRoomController.java&#10;#&#9;src/main/java/com/mahjong/client/WaitRoomController.java&#10;#&#9;src/main/java/com/mmahjong/server/Server.java&#10;#&#9;src/main/java/logic/players/Player.java&#10;#&#9;src/main/java/logic/tiles/BambooTile.java&#10;#&#9;src/main/java/logic/tiles/CharacterTile.java&#10;#&#9;src/main/java/logic/tiles/DotTile.java&#10;#&#9;src/main/java/logic/tiles/HonorTile.java&#10;#&#9;src/main/java/logic/tiles/Tile.java&#10;#&#9;src/main/java/module-info.java&#10;#&#9;src/main/java/reLogic/rules/PlayerOperateCheckRule.java&#10;#&#9;src/main/java/reLogic/rules/Rule.java&#10;#&#9;src/main/java/reLogic/rules/VictoryCheckRule.java&#10;#&#9;src/main/resources/com/mahjong/client/gameRoom.fxml&#10;#&#9;src/main/resources/com/mahjong/client/gameRoomWait.fxml&#10;#&#9;src/main/resources/com/mahjong/client/gameRule.fxml&#10;#&#9;src/main/resources/com/mahjong/client/menu.fxml&#10;#&#9;src/main/resources/com/mahjong/client/overRoom.fxml" />
     <MESSAGE value="完成基本登陆页面" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成基本登陆页面" />
+    <MESSAGE value="终版" />
+    <option name="LAST_COMMIT_MESSAGE" value="终版" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Mahjong$Client.ic" NAME="Client Coverage Results" MODIFIED="1717851418485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

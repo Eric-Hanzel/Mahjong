@@ -80,26 +80,7 @@ public class Game {
             }
         }
 
-        // Special tiles for the dealer
-        for (ArrayList<Tile> arrayList : dealerPlayer.getHandTileSet().getTileSets()) {
-            arrayList.clear();
-        }
-
-        dealerPlayer.getHandTileSet().addTile(new CharacterTile(1));
-        dealerPlayer.getHandTileSet().addTile(new CharacterTile(1));
-        dealerPlayer.getHandTileSet().addTile(new CharacterTile(1));
-        dealerPlayer.getHandTileSet().addTile(new CharacterTile(9));
-        dealerPlayer.getHandTileSet().addTile(new CharacterTile(9));
-        dealerPlayer.getHandTileSet().addTile(new CharacterTile(9));
-        dealerPlayer.getHandTileSet().addTile(new BambooTile(7));
-        dealerPlayer.getHandTileSet().addTile(new BambooTile(8));
-        dealerPlayer.getHandTileSet().addTile(new BambooTile(9));
-        dealerPlayer.getHandTileSet().addTile(new BambooTile(8));
-        dealerPlayer.getHandTileSet().addTile(new BambooTile(8));
-        dealerPlayer.getHandTileSet().addTile(new DotTile(7));
-        dealerPlayer.getHandTileSet().addTile(new DotTile(7));
-        dealerPlayer.getHandTileSet().addTile(new DotTile(7));
-
+        dealerPlayer.getHandTileSet().addTile(libraryTileSet.discardTile("Tile"));
         dealerPlayer.getHandTileSet().sort();
 
         if (PlayerOperateCheckRule.checkCanKong(dealerPlayer)) {
