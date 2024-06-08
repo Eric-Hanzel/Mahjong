@@ -26,7 +26,7 @@ public class GameRulesController extends Client {
         Image backgroundImage = new Image(getClass().getResource("/images/backGround.png").toExternalForm());
         BackgroundImage background = new BackgroundImage(backgroundImage,
                 BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,
-                new BackgroundSize(100, 100, true, true, false, true)); // 调整BackgroundSize的参数以覆盖整个VBox
+                new BackgroundSize(100, 100, true, true, false, true)); 
         rulesVBox.setBackground(new Background(background));
 
         String rules = "Winning Rules:\n" +
