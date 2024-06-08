@@ -1,4 +1,4 @@
-package logic.rules;
+package reLogic.rules;
 
 import logic.games.Game;
 import logic.players.Player;
