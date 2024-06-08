@@ -7,11 +7,14 @@ import reLogic.tiles.Tile;
 
 import java.io.Serial;
 
+// A factory class that extends TilesFactory to create sequential tiles
 public class SequenceTilesFactory extends TilesFactory{
     @Serial
+    // Unique identifier for serialization
     private static final long serialVersionUID = 16L;
     @Override
     public Tile getTile(String tileType){
+        // Handle creation of Character tiles
         if (tileType.equalsIgnoreCase("1Character")){
             return new CharacterTile(1);
         }else if (tileType.equalsIgnoreCase("2Character")){
@@ -30,6 +33,8 @@ public class SequenceTilesFactory extends TilesFactory{
             return new CharacterTile(8);
         }else if (tileType.equalsIgnoreCase("9Character")){
             return new CharacterTile(9);
+
+            // Handle creation of Bamboo tiles
         }else if (tileType.equalsIgnoreCase("1Bamboo")){
             return new BambooTile(1);
         }else if (tileType.equalsIgnoreCase("2Bamboo")){
@@ -48,6 +53,8 @@ public class SequenceTilesFactory extends TilesFactory{
             return new BambooTile(8);
         }else if (tileType.equalsIgnoreCase("9Bamboo")){
             return new BambooTile(9);
+
+            // Handle creation of Dot tiles
         }else if (tileType.equalsIgnoreCase("1Dot")){
             return new DotTile(1);
         }else if (tileType.equalsIgnoreCase("2Dot")){
@@ -67,6 +74,6 @@ public class SequenceTilesFactory extends TilesFactory{
         }else if (tileType.equalsIgnoreCase("9Dot")){
             return new DotTile(9);
         }
-        return null;
+        return null; // Return null if no valid tile type is matched
     }
 }

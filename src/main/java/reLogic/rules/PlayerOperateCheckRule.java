@@ -9,7 +9,10 @@ import reLogic.tilesSets.LockedTileSet;
 import java.util.ArrayList;
 import java.util.Objects;
 
+// Class that handles checking various operations a player can perform in the Mahjong game
 public class PlayerOperateCheckRule {
+
+    // Returns the single instance of PlayerOperateCheckRule
     private static PlayerOperateCheckRule uniqueInstance = null;
 
     public static PlayerOperateCheckRule getInstance(){
@@ -18,17 +21,20 @@ public class PlayerOperateCheckRule {
         }
         return uniqueInstance;
     }
+
+    // Private constructor to prevent instantiation
     private PlayerOperateCheckRule(){
 
     }
 
+    // Checks if a player's operation is legal in the current game state
     public static boolean checkOperateLegal(String remoteSocketAddress, String operate, Game game){
         ArrayList<Player> playerList = game.getPlayerList();
         String[] parts = operate.split(" ");
         Player operatePlayer = null;
 
         for (Player player : playerList) {
-            //找到该玩家
+            // Find the player by their remote socket address
             if (Objects.equals(player.getName(), remoteSocketAddress)) {
                 operatePlayer = player;
             }
@@ -83,9 +89,7 @@ public class PlayerOperateCheckRule {
         return false;
     }
 
-
-
-
+    // Checks if a player can perform a Pong action
     public static boolean checkCanPong(Player operatePlayer, Tile endPlayerDiscardTile) {
         HandTileSet handTileSet = operatePlayer.getHandTileSet();
         ArrayList<ArrayList<Tile>> copyHandTileArrayList = VictoryCheckRule.deepCopyTileSet(handTileSet.getTileSets());
@@ -107,6 +111,7 @@ public class PlayerOperateCheckRule {
         return false;
     }
 
+    // Checks if a player can perform a Bright Kong action
     public static boolean checkCanBrightKong(Player operatePlayer, Tile endPlayerDiscardTile) {
         HandTileSet handTileSet = operatePlayer.getHandTileSet();
         ArrayList<ArrayList<Tile>> copyHandTileArrayList = VictoryCheckRule.deepCopyTileSet(handTileSet.getTileSets());
@@ -127,7 +132,8 @@ public class PlayerOperateCheckRule {
         }
         return false;
     }
-    //暗杠和自摸后开杠
+
+    //Checks if a player can perform a Kong action (Dark Kong or a Kong after Hu)
     public static boolean checkCanKong(Player operatePlayer) {
         reLogic.rules.Rule rule = Rule.getInstance();
         HandTileSet handTileSet = operatePlayer.getHandTileSet();
@@ -141,27 +147,11 @@ public class PlayerOperateCheckRule {
             kongSet.addAll(rule.checkKong(tileSet));
         }
 
-//        for (ArrayList<Tile> tileArrayList: copyHandTileArrayList ){
-//            for (Tile tile: tileArrayList){
-//                int count = 0;
-//                for (Tile lockedTile:copyLockedTileArrayList.get(1)){
-//                    if (Objects.equals(tile.getType(), lockedTile.getType()) &&tile.getMagnitude()==lockedTile.getMagnitude()){
-//                        count++;
-//                        if (count == 3){
-//                            kongSet.add(tile);
-//                            kongSet.add(tile);
-//                            kongSet.add(tile);
-//                            kongSet.add(tile);
-//                            break;
-//                        }
-//                    }
-//                }
-//            }
-//        }
         System.out.println(kongSet);
         return kongSet.size() == 4;
     }
 
+    // Checks if a player can declare Hu (win) based on their current hand and the game state
     public static boolean checkCanHu(Player operatePlayer, Game game) {
         HandTileSet handTileSet = operatePlayer.getHandTileSet();
 
@@ -172,6 +162,8 @@ public class PlayerOperateCheckRule {
 
         return !victoryMsg.isEmpty();
     }
+
+    // Checks if a player can declare Hu (win) with the last discarded tile
     public static boolean checkCanHu(Player operatePlayer, Game game,Tile endPlayerDiscardTile) {
         HandTileSet handTileSet = operatePlayer.getHandTileSet();
         VictoryCheckRule victoryCheckRule = VictoryCheckRule.getInstance();
@@ -188,6 +180,7 @@ public class PlayerOperateCheckRule {
         return !victoryMsg.isEmpty();
     }
 
+    // Checks all victory conditions for a player and returns the result as a message
     public static String checkAllVictoryConditions(Game game, Player player, VictoryCheckRule victoryCheckRule, String victoryMsg) {
         if (victoryCheckRule.allTriplets(player)) {
             victoryMsg += "0 ";
@@ -223,7 +216,7 @@ public class PlayerOperateCheckRule {
         return victoryMsg;
     }
 
-
+    // Additional helper methods for checking player actions
     private static boolean checkCanDiscard(Player operatePlayer) {
         return operatePlayer.getCanDiscard();
     }
@@ -309,7 +302,4 @@ public class PlayerOperateCheckRule {
             return false;
         }
     }
-
-
-
 }

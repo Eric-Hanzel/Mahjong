@@ -7,8 +7,10 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Objects;
 
+// Class for defining and checking rules in the Mahjong game
 public class Rule {
 
+    // Returns the single instance of Rule
     private static Rule uniqueInstance = null;
 
     public static Rule getInstance(){
@@ -17,21 +19,24 @@ public class Rule {
         }
         return uniqueInstance;
     }
+
+    // // Private constructor to prevent instantiation
     private Rule(){
 
     }
 
+    // Checks and returns a list of tiles that form sequences (chow)
     public ArrayList<Tile> checkSequence(ArrayList<Tile> tileSet){
         ArrayList<Tile> sequenceSet = new ArrayList<>();
         ArrayList<Tile> checkingTileSet = new ArrayList<>(tileSet);
-        // 大于等于3进入检测
+        // Check if there are enough tiles to form sequences
         if (checkingTileSet.size() >= 3){
             int i = 0;
             boolean sequence;
-            // 遍历所有牌
+            // Iterate through the tiles to find sequences
             while (i < checkingTileSet.size()){
                 sequence = false;
-                // 确定ijk位置，在原手牌复制本删除，加入序列集合
+                // Check for sequences and remove them from the tile set
                 for (int j = 1; j < checkingTileSet.size() && !sequence; j++){
                     if (checkingTileSet.get(i).getMagnitude() == checkingTileSet.get(j).getMagnitude() - 1) {
                         for (int k = j + 1; k < checkingTileSet.size() && !sequence; k++) {
@@ -47,7 +52,7 @@ public class Rule {
                         }
                     }
                 }
-                //如果没有顺子，就删除，接着从下一个检查
+                // If no sequence found, remove the tile and check the next one
                 if (!sequence){
                     checkingTileSet.remove(0);
                 }
@@ -56,7 +61,7 @@ public class Rule {
         return sequenceSet;
     }
 
-    // 获取手牌顺子数量
+    // Gets the number of sequences in a player's hand
     public int getSequenceNumber(ArrayList<ArrayList<Tile>> handTileSet){
         ArrayList<Tile> sequenceSet = new ArrayList<>();
         for (ArrayList<Tile> tileSet : handTileSet){
@@ -64,7 +69,8 @@ public class Rule {
         }
         return sequenceSet.size() / 3;
     }
-    // 杠不算在内
+
+    // Checks and returns a list of tiles that form triplets (pongs), excluding kongs
     public ArrayList<Tile> checkTriplet(ArrayList<Tile> tileSet){
         ArrayList<Tile> tripletSet = new ArrayList<>();
         ArrayList<Tile> checkingTileSet = new ArrayList<>(tileSet);
@@ -72,6 +78,7 @@ public class Rule {
             int i = 0;
             boolean triplet;
             boolean kong;
+            // Iterate through the tiles to find triplets
             while (i < checkingTileSet.size()){
                 triplet = false;
                 kong = false;
@@ -79,7 +86,7 @@ public class Rule {
                     if (checkingTileSet.get(i+1).getMagnitude() == checkingTileSet.get(i).getMagnitude()&&Objects.equals(checkingTileSet.get(i + 1).getType(), checkingTileSet.get(i).getType())){
                         if (checkingTileSet.get(i+2).getMagnitude() == checkingTileSet.get(i).getMagnitude()&&Objects.equals(checkingTileSet.get(i + 2).getType(), checkingTileSet.get(i).getType())) {
                             if (i+3 < checkingTileSet.size()){
-                                //排除杠
+                                // Exclude kongs
                                 if (checkingTileSet.get(i+3).getMagnitude() != checkingTileSet.get(i).getMagnitude()&&Objects.equals(checkingTileSet.get(i + 3).getType(), checkingTileSet.get(i).getType())){
                                     tripletSet.add(checkingTileSet.get(i));
                                     tripletSet.add(checkingTileSet.get(i+1));
@@ -115,7 +122,8 @@ public class Rule {
         }
         return tripletSet;
     }
-    // 仅碰，没有考虑杠
+
+    // Gets the number of triplets in a player's hand, excluding kongs
     public int getTripletNumber(ArrayList<ArrayList<Tile>> handTileSet){
         ArrayList<Tile> tripletSet = new ArrayList<>();
         for (ArrayList<Tile> tileSet : handTileSet){
@@ -124,12 +132,14 @@ public class Rule {
         return tripletSet.size() / 3;
     }
 
+    //  Checks and returns a list of tiles that form pairs
     public ArrayList<Tile> checkPair(ArrayList<Tile> tileSet){
         ArrayList<Tile> pairSet = new ArrayList<>();
         ArrayList<Tile> checkingTileSet = new ArrayList<>(tileSet);
         if (checkingTileSet.size() >= 2){
             int i = 0;
             boolean pair;
+            // Iterate through the tiles to find pairs
             while (i < checkingTileSet.size()){
                 pair = false;
                 if (i + 1 < checkingTileSet.size()){
@@ -149,6 +159,7 @@ public class Rule {
         return pairSet;
     }
 
+    // Gets the number of pairs in a player's hand
     public int getPairNumber(ArrayList<ArrayList<Tile>> handTileSet){
         ArrayList<Tile> pairSet = new ArrayList<>();
         for (ArrayList<Tile> tileSet : handTileSet){
@@ -157,12 +168,14 @@ public class Rule {
         return pairSet.size() / 2;
     }
 
+    // Checks and returns a list of tiles that form kongs
     public ArrayList<reLogic.tiles.Tile> checkKong(ArrayList<reLogic.tiles.Tile> tileSet){
         ArrayList<reLogic.tiles.Tile> kongSet = new ArrayList<>();
         ArrayList<reLogic.tiles.Tile> checkingTileSet = new ArrayList<>(tileSet);
         if (checkingTileSet.size() >= 3){
             int i = 0;
             boolean kong;
+            // Iterate through the tiles to find kongs
             while (i < checkingTileSet.size()){
                 kong = false;
                 if (i + 3 < checkingTileSet.size()){
@@ -190,6 +203,7 @@ public class Rule {
         return kongSet;
     }
 
+    // Gets the number of kongs in a player's hand
     public int getKongNumber(ArrayList<ArrayList<reLogic.tiles.Tile>> handTileSet){
         ArrayList<reLogic.tiles.Tile> kongSet = new ArrayList<>();
         for (ArrayList<Tile> tileSet : handTileSet){
@@ -197,7 +211,4 @@ public class Rule {
         }
         return kongSet.size() / 4;
     }
-
-
-
 }

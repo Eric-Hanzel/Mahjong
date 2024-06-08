@@ -8,22 +8,25 @@ import reLogic.tilesSets.LibraryTileSet;
 import java.util.ArrayList;
 import java.util.Objects;
 
+// Class for checking victory conditions in the Mahjong game
 public class VictoryCheckRule{
-
     private static VictoryCheckRule uniqueInstance = null;
     private Rule rule;
 
+    // Returns the single instance of VictoryCheckRule
     public static VictoryCheckRule getInstance(){
         if (uniqueInstance == null){
             uniqueInstance = new VictoryCheckRule();
         }
         return uniqueInstance;
     }
+
+    // Private constructor to prevent instantiation
     private VictoryCheckRule(){
         rule = Rule.getInstance();
     }
 
-
+    // Combines hand tiles and locked tiles into a single list
     private ArrayList<ArrayList<reLogic.tiles.Tile>> joinHandLockedTile(ArrayList<ArrayList<reLogic.tiles.Tile>> handTileArrayList, ArrayList<ArrayList<reLogic.tiles.Tile>> lockedTileArrayList){
         ArrayList<ArrayList<reLogic.tiles.Tile>> copyHandTileArrayList = VictoryCheckRule.deepCopyTileSet(handTileArrayList);
         for (ArrayList<reLogic.tiles.Tile> tileArrayList:lockedTileArrayList){
@@ -44,6 +47,8 @@ public class VictoryCheckRule{
         }
         return copyHandTileArrayList;
     }
+
+    // Creates a deep copy of the provided tile set, removing null elements
     public static ArrayList<ArrayList<reLogic.tiles.Tile>> deepCopyTileSet(ArrayList<ArrayList<reLogic.tiles.Tile>> original) {
         ArrayList<ArrayList<reLogic.tiles.Tile>> copy = new ArrayList<>();
         for (ArrayList<reLogic.tiles.Tile> tileSet : original) {
@@ -67,10 +72,7 @@ public class VictoryCheckRule{
         return copy;
     }
 
-
-
-    //一号
-    // 四个刻字，一张对子 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    // Checks if the player has an "All Triplets" hand (four triplets and a pair)
     public boolean allTriplets(Player operatePlayer){
         boolean victory = false;
         ArrayList<ArrayList<Tile>> copyHandTile = deepCopyTileSet(operatePlayer.getHandTileSet().getTileSets());
@@ -88,7 +90,7 @@ public class VictoryCheckRule{
         return victory;
     }
 
-    //二号 问题
+    // Checks if the player has a "Big Single Wait" hand
     public boolean bigSingleWait(Player operatePlayer){
         boolean victory = false;
         ArrayList<ArrayList<Tile>> copyHandTile = deepCopyTileSet(operatePlayer.getHandTileSet().getTileSets());
@@ -101,7 +103,7 @@ public class VictoryCheckRule{
         return victory;
     }
 
-    //三号
+    // Checks if the player has a "Zhuo Wu Kui" hand
     public boolean zhuoWuKui(Player operatePlayer) {
         boolean victory = false;
         int pair = 1;
@@ -129,7 +131,8 @@ public class VictoryCheckRule{
         }
         return victory;
     }
-    // 四号
+
+    // Checks if the player has a "Hai Di Lao Yue" hand
     public boolean haiDiLaoYue(Player operatePlayer, LibraryTileSet libraryTileSet){
         boolean victory = false;
         if (libraryTileSet.getTileNumber()==0){
@@ -161,7 +164,7 @@ public class VictoryCheckRule{
         return victory;
     }
 
-    //五号
+    // Checks if the player has a "Yi Tiao Long" hand
     public boolean yiTiaoLong(Player operatePlayer) {
         boolean victory = false;
         boolean yiTiaoLong = false;
@@ -208,7 +211,7 @@ public class VictoryCheckRule{
 
     }
 
-    //六号
+    // Checks if the player has a "Qi Dui Zi" hand
     public boolean qiDuiZi(Player operatePlayer){
         boolean victory = false;
         ArrayList<ArrayList<Tile>> copyHandTile = deepCopyTileSet(operatePlayer.getHandTileSet().getTileSets());
@@ -218,7 +221,7 @@ public class VictoryCheckRule{
         return victory;
     }
 
-    // 七号
+    // Checks if the player has a "Gang Shang Kai Hua" hand
     public boolean gangShangKaiHua(Player operatePlayer){
         boolean victory = false;
         int pair = 1;
@@ -249,7 +252,7 @@ public class VictoryCheckRule{
         return victory;
     }
 
-    //八号
+    // Checks if the player has a "Qing Yi Se" hand
     public boolean qingYiSe(Player operatePlayer){
         boolean victory = false;
         boolean qingYiSe = false;
@@ -293,7 +296,7 @@ public class VictoryCheckRule{
     }
 
 
-    //九号
+    // Checks if the player has a "Super Qi Dui Zi" hand
     public boolean superQiDuiZi(Player operatePlayer){
         boolean victory = false;
         ArrayList<ArrayList<Tile>> copyHandTile = deepCopyTileSet(operatePlayer.getHandTileSet().getTileSets());
@@ -305,7 +308,7 @@ public class VictoryCheckRule{
         return victory;
     }
 
-    //十号
+    // Checks if the player has a "Basic Hu" hand
     public boolean basicHu(Player operatePlayer){
         boolean victory = false;
         int pair = 1;

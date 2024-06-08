@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Objects;
 
+// Class representing the set of locked tiles for a player in Mahjong
 public class LockedTileSet extends DoubleArrayListTileDecorator {
     @Serial
     private static final long serialVersionUID = 13L;
@@ -15,6 +16,8 @@ public class LockedTileSet extends DoubleArrayListTileDecorator {
     ArrayList<Tile> pongTileSet;
     ArrayList<Tile> brightKongTileSet;
     ArrayList<Tile> darkKongTileSet;
+
+    // Constructs a LockedTileSet and initializes the tile categories
     public LockedTileSet(){
         lockedTileSet = new ArrayList<ArrayList<Tile>>();
         chowTileSet = new ArrayList<Tile>();
@@ -28,6 +31,7 @@ public class LockedTileSet extends DoubleArrayListTileDecorator {
         setTileSets(lockedTileSet);
     }
 
+    // Adds a tile to the appropriate locked tile set based on its type
     @Override
     public void addTile(Tile tile) {
         if (Objects.equals(tile.getType(), "Chow")) {
@@ -41,11 +45,13 @@ public class LockedTileSet extends DoubleArrayListTileDecorator {
         }
     }
 
+    // Discards a tile from the locked tile set
     @Override
     public Tile discardTile(String tileType) {
         return null;
     }
 
+    // Sorts the tiles in each locked tile set by magnitude
     @Override
     public void sort() {
         Comparator<Tile> tilecomparator = Comparator.comparingInt(Tile::getMagnitude);

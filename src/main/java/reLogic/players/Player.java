@@ -11,6 +11,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
 
+// Represents a player in the Mahjong game, handling the player's tile sets and game actions
 public class Player implements Serializable {
     @Serial
     private static final long serialVersionUID = 21L;
@@ -31,6 +32,7 @@ public class Player implements Serializable {
     private boolean skip;
     private int scoring;
 
+    // Constructs a Player with the specified name and initializes their tile sets
     public Player(String player){
         TilesSetsFactory singleArrayListTileSet = TilesSetsFactoryProducer.getTilesSetFactory(true);
         TilesSetsFactory doubleArrayListTileSet = TilesSetsFactoryProducer.getTilesSetFactory(false);
@@ -50,8 +52,8 @@ public class Player implements Serializable {
         skip = false;
         scoring = 0;
     }
-    //状态
-    //获取状态
+
+    // Getter methods for player state
     public String getName() {
         return name;
     }
@@ -86,8 +88,7 @@ public class Player implements Serializable {
         return skip;
     }
 
-
-    //设置状态
+    // Setter methods for player state
     public void setDealerState(boolean b){
         dealerState = b;
     }
@@ -118,7 +119,8 @@ public class Player implements Serializable {
     public void setSkip(boolean b){
         skip = b;
     }
-    //行为
+
+    // Player actions
     public void getTile(Tile tile) {
         handTileSet.addTile(tile);
     }
@@ -134,6 +136,8 @@ public class Player implements Serializable {
         chowByTypes(tile,type,targetSubHandTileSet,lockedTileSet);
 
     }
+
+    // Sets the target sub-hand tile set based on the tile type
     private ArrayList<Tile> setTargetSubHandTileSet(ArrayList<ArrayList<Tile>> handTileSets, Tile tile, ArrayList<Tile> targetTileSet){
         String tileType = tile.getType();
         if (tileType == "Character"){
@@ -145,6 +149,8 @@ public class Player implements Serializable {
         }
         return targetTileSet;
     }
+
+    // Performs the Chow action based on the tile type and updates the locked tile sets
     private void chowByTypes(Tile tile,String type,ArrayList<Tile> targetTileSet,LockedTileSet lockedTileSets){
         int magnitude = tile.getMagnitude();
         ArrayList<Tile> removedTile;
@@ -209,6 +215,7 @@ public class Player implements Serializable {
         }
     }
 
+    // Performs a Pong action with the specified tile
     public void pong(Tile tile){
         handTileSet.setEndSecondGetTile(handTileSet.getEndGetTile());
         handTileSet.setEndGetTile(tile);
@@ -232,6 +239,7 @@ public class Player implements Serializable {
 
     }
 
+    // Performs a Bright Kong action with the specified tile
     public void brightKong(Tile tile){
         handTileSet.setEndSecondGetTile(handTileSet.getEndGetTile());
         handTileSet.setEndGetTile(tile);
@@ -254,11 +262,15 @@ public class Player implements Serializable {
             tileSet.removeAll(removedTile);
         }
     }
+
+    // Performs a Kong action by calling the appropriate Kong method
     public void Kong(){
-        darkKong();
-        //第二种
-//        kaiKong();
+        darkKong(); // Perform Dark Kong
+        // Uncomment below to use another Kong type
+        // kaiKong();
     }
+
+    // Performs a Dark Kong action, which involves checking and setting tiles for a concealed Kong
     private void darkKong(){
         Rule rule = Rule.getInstance();
         ArrayList<Tile> newKongSet = new ArrayList<>();
@@ -282,6 +294,8 @@ public class Player implements Serializable {
             tileSet.removeAll(removedTile);
         }
     }
+
+    // Performs a Kai Kong action, converting a Pong to a Kong
     private void kaiKong(){
         ArrayList<Tile> kongSet = lockedTileSet.getTileSets().get(3);
         ArrayList<Tile> pongTileSet = lockedTileSet.getTileSets().get(1);
@@ -307,7 +321,7 @@ public class Player implements Serializable {
         }
     }
 
-    //获取持有物
+    // Getter methods for player's tile sets
     public HandTileSet getHandTileSet(){
         return handTileSet;
     }
@@ -317,10 +331,4 @@ public class Player implements Serializable {
     public PlayedTileSet getPlayedTileSet(){
         return playedTileSet;
     }
-
-
-
-
-
-
 }

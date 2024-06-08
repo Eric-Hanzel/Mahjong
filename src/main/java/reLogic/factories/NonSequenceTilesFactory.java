@@ -5,8 +5,10 @@ import reLogic.tiles.Tile;
 
 import java.io.Serial;
 
+// A factory class that extends TilesFactory to create non-sequential honor tiles
 public class NonSequenceTilesFactory extends TilesFactory{
     @Serial
+    // Unique identifier for serialization
     private static final long serialVersionUID = 17L;
 
     @Override
@@ -26,6 +28,6 @@ public class NonSequenceTilesFactory extends TilesFactory{
         }else if (tileType.equalsIgnoreCase("White")){
             return new HonorTile("White");
         }
-        return null;
+        return null;// If the tile type does not match any known types, return null
     }
 }
