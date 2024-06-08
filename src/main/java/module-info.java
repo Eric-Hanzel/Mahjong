@@ -11,7 +11,7 @@ module com.example.mahjong {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
     requires java.logging;
-    requires org.testng;
+
 
     opens com.mahjong.client to javafx.fxml;
     exports com.mahjong.client;
