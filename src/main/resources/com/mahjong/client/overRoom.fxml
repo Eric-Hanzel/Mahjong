@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 
 <VBox fx:id="vBox" alignment="CENTER" spacing="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="com.mahjong.client.OverRoomController">
-    <Label fx:id="gameOverLabel" style="-fx-font-size: 24px; -fx-font-weight: bold;" text="游戏结束" />
+    <Label fx:id="gameOverLabel" style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Game Over" />
     <Label fx:id="scoringLabel" style="-fx-font-size: 18px;" />
     <Label fx:id="playerNameLabel" style="-fx-font-size: 18px;" />
     <Label fx:id="victoryTypeLabel" style="-fx-font-size: 18px;" />
