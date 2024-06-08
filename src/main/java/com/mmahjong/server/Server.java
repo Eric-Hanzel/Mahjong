@@ -27,18 +27,22 @@ public class Server {
     public static int skipNumber = 0;
     public static volatile boolean gameStart = false;
 
+    // Main server method to start the server and manage game initialization
     public static void main(String[] args) throws IOException {
         serverSocket = new ServerSocket(8888);
-        System.out.println("服务器启动，等待客户端连接...");
+        System.out.println("Server starts, waiting for client connection...");
 
+        // Start a new thread to accept client connections
         new Thread(new AcceptClients()).start();
 
+        // Wait for the game to start
         while (!gameStart) {
             Thread.onSpinWait();
         }
-        System.out.println("游戏启动");
-        logger.info("玩家列表初始化已发送给所有客户端。");
+        System.out.println("Game launch");
+        logger.info("The player list initialization has been sent to all clients.");
 
+        // Once the game starts, send the player list to all clients
         for (ObjectOutputStream oos : outputs) {
             ArrayList<reLogic.players.Player> players = new ArrayList<>(game.getPlayerList());
             oos.writeObject(players);
@@ -46,18 +50,21 @@ public class Server {
         }
     }
 
+    // Runnable class to handle client connections
     private static class AcceptClients implements Runnable{
         @Override
         public void run(){
-            logger.info("Accept线程启动");
+            logger.info("Accept thread start");
             while (true) {
                 try {
-                    Socket socket = serverSocket.accept();
+                    Socket socket = serverSocket.accept(); // Accept a new client connection
                     onLineSocket.add(socket);
                     logger.info(""+socket);
                     outputs.add(new ObjectOutputStream(socket.getOutputStream()));
-                    logger.info("客户端已连接: " + socket.getRemoteSocketAddress());
-                    logger.info("当前在线客户端: " + onLineSocket.size());
+                    logger.info("The client is connected: " + socket.getRemoteSocketAddress());
+                    logger.info("Current online client: " + onLineSocket.size());
+
+                    // Start the game if four clients have connected
                     if (onLineSocket.size() == 4) {
                         for (ObjectOutputStream oos : outputs){
                             oos.writeUTF("GameStart");
@@ -66,7 +73,7 @@ public class Server {
                         game = new reLogic.games.Game();
                         game.gameInit(onLineSocket);
                         gameStart = true;
-                        logger.info("玩家列表: " + game.getPlayerList());
+                        logger.info("Player list: " + game.getPlayerList());
                         for (Socket socket1: onLineSocket){
                             new HandleClient(socket1,socket1.getRemoteSocketAddress().toString()).start();
                         }
@@ -78,6 +85,7 @@ public class Server {
         }
     }
 
+    // Thread class to handle individual client connections
     private static class HandleClient extends Thread{
         private Socket client;
         private String clientId;
@@ -100,18 +108,19 @@ public class Server {
         public void run(){
             try {
                 while (true){
-                    logger.info(client+"启动成功");
-                    Object message = input.readObject();
+                    logger.info(client+"Started successfully");
+                    Object message = input.readObject(); // Read messages from the client
                     game.printAllPlayersDetails();
                     if (message instanceof String){
                         String operate = (String) message;
-                        logger.info(clientId + "操作: " + message);
-                        //吃，碰明杠阶段
+                        logger.info(clientId + "Operation: " + message);
+
+                        // Process the operation from the client
                         if (game.getCheckState()){
-                            System.out.println("进入检查阶段");
-                            //收集玩家操作，处理碰杠和跳，约10秒状态自动结束，
+                            System.out.println("Entering checking phase");
+
+                            // Handle game operations like Pong, Kong, and Skip
                             if (PlayerOperateCheckRule.checkOperateLegal(clientId,operate,game)){
-                                //如果是跳，返回接受，并检查人数，满三结束checkstate并告知所有人,顺延玩家
 
                                 Player player = null;
                                 for (Player p : game.getPlayerList()){
@@ -120,6 +129,8 @@ public class Server {
                                         break;
                                     }
                                 }
+
+                                // End game and victory conditions check
                                 if (!game.getGameState()){
                                     sendToAllClient("GameOver");
                                     ArrayList<Player> players = new ArrayList<>(game.getPlayerList());
@@ -127,10 +138,13 @@ public class Server {
                                     sendToAllClient("Hu "+player.getName()+" "+PlayerOperateCheckRule.checkAllVictoryConditions(game,player,victoryCheckRule,""));
                                 }
 
+                                // Handle skip operation
                                 if (operate.equals("Skip") && !player.getSkip()){
                                     skipNumber++;
                                     System.out.println(skipNumber);
                                 }
+
+                                // If operation is skip and skips are complete, reset state
                                 if (Objects.equals(game.logicOperate(clientId, operate), "Skip")){
                                     sendToOneClient(client,"skipAccept");
                                     if (skipNumber == 3){
@@ -143,19 +157,18 @@ public class Server {
                                         ArrayList<Player> players = new ArrayList<>(game.getPlayerList());
                                         sendToAllClient(players);
                                     }
-                                //有人碰或杠
                                 }else {
                                     ArrayList<Player> players = new ArrayList<>(game.getPlayerList());
                                     sendToAllClient(players);
                                 }
-                                //退出checkState
                             }else {
                                 sendToOneClient(client,"illegal");
                             }
 
                         }else {
-                            System.out.println("进入普通阶段");
-                            //摸牌和出牌阶段，暗杠
+                            System.out.println("Entering normal phase");
+
+                            // Normal game phase operations like drawing and discarding tiles
                             if (PlayerOperateCheckRule.checkOperateLegal(clientId,operate,game)){
                                 Player player = null;
                                 for (Player p : game.getPlayerList()){
@@ -171,6 +184,7 @@ public class Server {
                                     sendToAllClient(players);
                                     sendToAllClient("Hu "+player.getName()+" "+PlayerOperateCheckRule.checkAllVictoryConditions(game,player,victoryCheckRule,""));
                                 }
+
                                 if (Objects.equals(game.logicOperate(clientId, operate), "Chow")){
 
                                     String chowTypes = PlayerOperateCheckRule.getCanChowTypes(player,game.getEndPlayerDiscardTile());
@@ -189,7 +203,8 @@ public class Server {
                 e.printStackTrace();
             }
         }
-        //gai'xie
+
+        // Method to send a message to a single client
         private void sendToOneClient(Socket socket,String string) {
             try {
                 String[] parts = string.split(" ");
@@ -198,9 +213,9 @@ public class Server {
                         ObjectOutputStream oos = outputs.get(onLineSocket.indexOf(socket));
                         if (string.equals("illegal")) {
                             oos.reset();
-                            oos.writeObject("!!!!!!非法操作!!!!!!一概禁止!!!!!!");
+                            oos.writeObject("!!!!!! Illegal Operation !!!!!!");
                             oos.flush();
-                            logger.info("玩家非法操作");
+                            logger.info("Player illegal operation");
                         } else if (string.equals("skipAccept")) {
                             oos.reset();
                             oos.writeObject("skipAccept");
@@ -223,6 +238,7 @@ public class Server {
             }
         }
 
+        // Method to broadcast a message or data to all connected clients
         private void sendToAllClient(ArrayList<Player> playerList) {
             try {
                 for (ObjectOutputStream oos: outputs) {
@@ -230,11 +246,13 @@ public class Server {
                     oos.writeObject(playerList);
                     oos.flush();
                 }
-                logger.info("玩家列表更新已发送给所有客户端。");
+                logger.info("Player list update has been sent to all clients.");
             }catch (Exception e){
                 e.printStackTrace();
             }
         }
+
+        // Method to broadcast a simple message to all clients
         private void sendToAllClient(String s) {
             try {
                 for (ObjectOutputStream oos: outputs) {
@@ -242,7 +260,7 @@ public class Server {
                     oos.writeObject(s);
                     oos.flush();
                 }
-                logger.info("checkstate更新已发送给所有客户端。");
+                logger.info("Check state update has been sent to all clients.");
             }catch (Exception e){
                 e.printStackTrace();
             }

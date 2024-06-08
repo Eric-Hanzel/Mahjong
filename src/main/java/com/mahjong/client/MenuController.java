@@ -11,47 +11,50 @@ import java.io.IOException;
 
 public class MenuController {
     @FXML
-    private Button gameStartButton;
+    private Button gameStartButton; // Button to start the game
     @FXML
-    private Button gameRulesButton;
+    private Button gameRulesButton; // Button to display the game rules
     @FXML
-    private Button exitGameButton;
+    private Button exitGameButton; // Button to exit the game
 
-
+    // Handles the action to start the game
     @FXML
     private void handleGameStart() throws IOException {
-//        clientCommunicateThread.start();
 
+        // Load the waiting room scene before the game starts
         FXMLLoader loader = new FXMLLoader(getClass().getResource("gameRoomWait.fxml"));
         Scene waitingScene = new Scene(loader.load(),1000,800);
 
-        // 获取当前窗口
+        // Get the current stage (window) using the scene of the start button
         Stage stage = (Stage) gameStartButton.getScene().getWindow();
-        stage.setScene(waitingScene);
+        stage.setScene(waitingScene); // Set the new scene to the stage
 
+        // Get the controller for the waiting room and initialize network connections
         WaitRoomController controller = loader.getController();
         controller.initializeNet(stage);
 
     }
 
+    // Handles the action to display the game rules
     @FXML
     private void handleGameRules() throws IOException {
-        // TODO: 显示游戏规则
-        // 创建游戏主页面的场景和布局
+
+        // Load the scene for displaying game rules
         FXMLLoader loader = new FXMLLoader(getClass().getResource("gameRule.fxml"));
         Scene gameRuleScene = new Scene(loader.load(),1000,800);
 
-        // 获取当前窗口
+        // Get the current stage (window) using the scene of the rules button
         Stage stage = (Stage) gameRulesButton.getScene().getWindow();
-        stage.setScene(gameRuleScene);
+        stage.setScene(gameRuleScene); // Set the new scene to the stage
 
     }
 
+    // Handles the action to exit the game
     @FXML
     private void handleExitGame() {
-        // 退出程序
+        // Get the current stage (window) using the scene of the exit button
         Stage stage = (Stage) exitGameButton.getScene().getWindow();
-        stage.close();
+        stage.close(); // Close the window, effectively exiting the application
     }
 
 }

@@ -15,21 +15,23 @@ import java.io.IOException;
 public class LoginController {
 
     @FXML
-    private TextField usernameField;
+    private TextField usernameField; // TextField for user to input their username
 
     @FXML
-    private PasswordField passwordField;
+    private PasswordField passwordField; // PasswordField for user to input their password
 
     @FXML
     private void handleLogin(ActionEvent event) throws IOException {
-        String username = usernameField.getText();
-        String password = passwordField.getText();
+        String username = usernameField.getText(); // Get text from username input field
+        String password = passwordField.getText(); // Get text from password input field
 
         if (isValidCredentials(username, password)) {
-            // 凭据有效，进入游戏主页面
+
+            // If the credentials are valid, proceed to the game main menu page
             goToGameMenuPage();
         } else {
-            // 凭据无效，弹出警告并清空输入字段
+
+            // If credentials are invalid, show an alert and clear input fields
             showLoginFailedAlert();
             usernameField.clear();
             passwordField.clear();
@@ -37,26 +39,29 @@ public class LoginController {
     }
 
     private boolean isValidCredentials(String username, String password) {
-        // 这里应该有一个更安全的验证机制
+
+        // Placeholder for a more secure authentication mechanism
         return "user".equals(username) && "pass".equals(password);
     }
 
     private void goToGameMenuPage() throws IOException {
+
+        // Load the FXML for the game menu page and create a new scene
         FXMLLoader fxmlLoader = new FXMLLoader(Client.class.getResource("menu.fxml"));
         Scene menuScene = new Scene(fxmlLoader.load(), 600, 400);
-        // 创建游戏主页面的场景和布局
 
-        // 获取当前窗口并设置新场景
+        // Get the current stage and set the new scene for the game menu
         Stage primaryStage = (Stage) usernameField.getScene().getWindow();
         primaryStage.setScene(menuScene);
     }
 
     private void showLoginFailedAlert() {
-        // 创建并显示登录失败的警告
+
+        // Create and display an alert for a failed login attempt
         Alert alert = new Alert(AlertType.ERROR);
-        alert.setTitle("登录失败");
+        alert.setTitle("login failure");
         alert.setHeaderText(null);
-        alert.setContentText("用户名或密码错误，请重新输入！");
+        alert.setContentText("User name or password is incorrect, please enter again!");
         alert.showAndWait();
     }
 }

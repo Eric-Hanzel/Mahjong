@@ -10,17 +10,28 @@ import java.io.IOException;
 import java.net.Socket;
 
 public class Client extends Application {
-    //当玩家点击加入游戏与服务端建立通道 ok
-    //两个线程：一个接受服务端的消息，更新画布 ok
-    //另一个向服务端发消息，玩家操作消息 ok
-    //玩家点击相应操作时，就向服务端发消息
+
+    // When a player clicks to join a game, a communication channel is established with the server.
+    // There are two threads: one for receiving messages from the server to update the canvas,
+    // and another for sending messages to the server based on player actions.
+    // When a player clicks a corresponding action, a message is sent to the server.
 
     @Override
     public void start(Stage stage) throws IOException {
+
+        // Load the main menu FXML file
         FXMLLoader fxmlLoader = new FXMLLoader(Client.class.getResource("menu.fxml"));
+
+        // Create a scene with the loaded FXML, setting the dimensions to 1000x800 pixels
         Scene scene = new Scene(fxmlLoader.load(), 1000, 800);
+
+        // Set the title of the window to "Mahjong"
         stage.setTitle("Mahjong");
+
+        // Set the scene for this stage
         stage.setScene(scene);
+
+        // Display the stage
         stage.show();
 
     }
@@ -28,5 +39,5 @@ public class Client extends Application {
 
     public static void main(String[] args) {
         launch();
-    }
+    }// Launch the application
 }

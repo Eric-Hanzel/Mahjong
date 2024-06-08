@@ -20,7 +20,7 @@ public class Rule {
         return uniqueInstance;
     }
 
-    // // Private constructor to prevent instantiation
+    // Private constructor to prevent instantiation
     private Rule(){
 
     }

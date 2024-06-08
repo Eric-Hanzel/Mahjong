@@ -37,11 +37,13 @@ import java.util.logging.Logger;
 
 public class GameRoomController {
     private static final Logger logger = Logger.getLogger(Server.class.getName());
+
+    // UI elements defined in FXML
     @FXML
-    public Label autoHideLabel;
-    public VBox player4LockedTiles;
-    public HBox player3LockedTiles;
-    public VBox player2LockedTiles;
+    public Label autoHideLabel; // Auto-hiding label for displaying messages
+    public VBox player4LockedTiles; // Containers for locked tiles for players 2 and 4
+    public HBox player3LockedTiles; // Containers for locked tiles for players 1 and 3
+    public VBox player2LockedTiles; // Lists for managing player, dealer, and turn labels dynamically
     public HBox player1LockedTiles;
     public ArrayList<Label> playerLabelList;
     public ArrayList<Label> dealerLabelList;
@@ -59,9 +61,9 @@ public class GameRoomController {
     public Label dealerLabel4;
     public Label turnLabel4;
     @FXML
-    private VBox chowOptionsVBox;
+    private VBox chowOptionsVBox; // Container for displaying chow options to the player
     @FXML
-    public TilePane rightTilePane;
+    public TilePane rightTilePane; // Containers for displaying tiles
     @FXML
     public TilePane leftTilePane;
     @FXML
@@ -72,25 +74,27 @@ public class GameRoomController {
     @FXML
     private TilePane bottomTilePane;
 
-    private Socket socket;
-    private Rectangle selectedTile;
-    private ArrayList<Tile> handTileList;
-    private ArrayList<PlayedTileSet> playedTileSetList;
-    private ArrayList<ArrayList<Tile>> lockedTileSetList;
+    private Socket socket; // Socket for network communication
+    private Rectangle selectedTile; // Currently selected tile
+    private ArrayList<Tile> handTileList; // List of tiles in the player's hand
+    private ArrayList<PlayedTileSet> playedTileSetList; // List of tiles that have been played
+    private ArrayList<ArrayList<Tile>> lockedTileSetList; // List of locked tiles
 
-    private ArrayList<TilePane> playedPane;
-    private ArrayList<HBox> lockedBox1;
-    private ArrayList<VBox> lockedBox2;
-    private MediaPlayer mediaPlayer;
-    private List<String> musicList = new ArrayList<>();
-    private int currentSongIndex = 0;
-    private ObjectInputStream input;
-    private ObjectOutputStream output;
-    private boolean gameOver = false;
-    private ArrayList<Player> endPlayerList;
+    private ArrayList<TilePane> playedPane; // List of tile panes for played tiles
+    private ArrayList<HBox> lockedBox1; // HBoxes for locked tiles for horizontal layout players
+    private ArrayList<VBox> lockedBox2; // VBoxes for locked tiles for vertical layout players
+    private MediaPlayer mediaPlayer; // Media player for playing background music
+    private List<String> musicList = new ArrayList<>(); // List of music file URLs
+    private int currentSongIndex = 0; // Index of the current song being played
+    private ObjectInputStream input; // Input stream for receiving data from the server
+    private ObjectOutputStream output; // Output stream for sending data to the server
+    private boolean gameOver = false; // Flag to check if the game is over
+    private ArrayList<Player> endPlayerList; // List of players at the end of the game
 
     @FXML
     public void initialize() {
+
+        // Initial setup for various lists and UI components
         handTileList = new ArrayList<Tile>();
         playedTileSetList = new ArrayList<>();
         lockedTileSetList = new ArrayList<>();
@@ -122,114 +126,134 @@ public class GameRoomController {
         playedPane.add(topTilePane);
         playedPane.add(leftTilePane);
 
-//        loadMusic();
+        // Load background music if available
+        loadMusic();
     }
+
+    // Handle tile selection with a mouse click event
     @FXML
     public void handleTileClick(MouseEvent event) {
         if (selectedTile == event.getSource() && selectedTile.getStroke() == Color.YELLOW){
+
+            // If the clicked tile is already selected, deselect it
             selectedTile.setStroke(null);
         }else {
+
+            // If there is a previously selected tile, deselect it
             if (selectedTile != null) {
                 selectedTile.setStroke(null); // 取消之前选中方块的高亮
             }
 
+            // Set the clicked tile as the selected tile and highlight it
             selectedTile = (Rectangle) event.getSource();
             selectedTile.setStroke(Color.YELLOW); // 设置选中方块的高亮颜色
             selectedTile.setStrokeWidth(3);
         }
     }
 
+    // Handle the discard action
     @FXML
     public void handleDiscard() throws IOException {
-        // 发信息给服务器，更新playedtile；然后再收消息，更新画板
+
+        // If a tile is selected and highlighted, proceed to discard it
         if (selectedTile != null && selectedTile.getStroke() == Color.YELLOW && !Objects.equals(selectedTile.getId(), "")) {
-            sendOperation("Discard " + selectedTile.getId());
-            selectedTile.setStroke(null); // 移除高亮效果
-            selectedTile = null; // 重置选中方块
+            sendOperation("Discard " + selectedTile.getId()); // Send the discard operation to the server
+            selectedTile.setStroke(null); // Remove highlighting
+            selectedTile = null; // Clear the selection
 
         }
     }
+
+    // Handle the action to draw a tile
     @FXML
     public void handleGet(ActionEvent event) throws IOException {
-        sendOperation("Get");
+        sendOperation("Get"); // Send the 'Get' operation to the server
     }
 
+    // Handle the action to form a sequence (Chow)
     @FXML
     public void handleChow(ActionEvent event) throws IOException {
-        sendOperation("Chow");
+        sendOperation("Chow"); // Send the 'Chow' operation to the server
     }
+
+    // Handle the action to skip the turn
     @FXML
     public void handleSkip(ActionEvent event) throws IOException {
-        sendOperation("Skip");
+        sendOperation("Skip"); // Send the 'Skip' operation to the server
     }
+
+    // Handle the action to form a triplet (Pong)
     @FXML
     public void handlePong(ActionEvent event) throws IOException {
-        sendOperation("Pong");
+        sendOperation("Pong"); // Send the 'Pong' operation to the server
     }
+
+    // Handle the action to form a quartet (Kong)
     @FXML
     public void handleKong(ActionEvent event) throws IOException {
         sendOperation("Kong");
     }
 
+    // Handle the action to declare a win (Hu)
     @FXML
     public void handleHu(ActionEvent event) throws IOException {
-        sendOperation("Hu");
+        sendOperation("Hu"); // Send the 'Hu' operation to the server
     }
 
-
-
-
+    // Send a specified operation to the server
     private void sendOperation(String operation) throws IOException {
         output.reset();
         output.writeObject(operation);
         output.flush();
     }
 
+    // Establish network communication and set up listening for incoming messages
     public void setNetwork(Socket socket,ObjectInputStream input) throws IOException {
-        this.socket = socket;
-        this.input = input;
-        output = new ObjectOutputStream(socket.getOutputStream());
-        //收玩家和牌库
+        this.socket = socket; // Store the socket for later use
+        this.input = input; // Store the input stream for reading data from the server
+        output = new ObjectOutputStream(socket.getOutputStream()); // Initialize the output stream for sending data to the server
+
+        // Start a new thread to handle incoming messages continuously
         new Thread(() -> {
             try {
-                while (true) {
+                while (true) { // Keep listening as long as the connection is active
                     try {
-                        logger.info("客户端准备读取数据");
-                        Object message = input.readObject();
+                        logger.info("The client is ready to read data"); // Log that the client is ready to read data
+                        Object message = input.readObject(); // Read the next object from the input stream
                         if (message instanceof String){
                             String msg = (String) message;
                             String[] parts = msg.split(" ");
                             if (Objects.equals(parts[0], "chowTypes")){
-                                Platform.runLater(() -> showChowChoice(msg));
+                                Platform.runLater(() -> showChowChoice(msg)); // Process chow options on the UI thread
                             }else if (Objects.equals(parts[0], "Hu")){
                                 Platform.runLater(() -> {
                                     try {
-                                        gameOver(msg,endPlayerList);
+                                        gameOver(msg,endPlayerList); // Process the game over scenario on the UI thread
                                     } catch (IOException e) {
                                         throw new RuntimeException(e);
                                     }
                                 });
                             }else if (Objects.equals(parts[0], "GameOver")){
-                                gameOver = true;
+                                gameOver = true; // Set the game over flag
                             } else {
-                                Platform.runLater(() -> showMsg(msg));
+                                Platform.runLater(() -> showMsg(msg)); // Show other messages on the UI thread
                             }
                         }else {
                             ArrayList<Player> playerList = (ArrayList<Player>) message;
                             if (gameOver){
-                               endPlayerList = new ArrayList<>(playerList);
+                               endPlayerList = new ArrayList<>(playerList); // Store the list of players at game end
                             }
                             for (Player player: playerList){
-                                logger.info(""+player.getHandTileSet().getTileSets());
+                                logger.info(""+player.getHandTileSet().getTileSets()); // Log the current hand tile sets
                             }
-                            Platform.runLater(() -> updateGameBoard(playerList));
+                            Platform.runLater(() -> updateGameBoard(playerList)); // Update the game board on the UI thread
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
-                        System.out.println(socket.getRemoteSocketAddress() + "自己下线了");
-                        input.close();
-                        socket.close();
-                        break;
+                        System.out.println(socket.getRemoteSocketAddress() + "Self-logged off"); // Log that the socket has disconnected
+                        input.close(); // Close the input stream
+                        socket.close(); // Close the socket
+                        break; // Exit the loop and end the thread
                     }
                 }
             } catch (IOException e) {
@@ -238,23 +262,23 @@ public class GameRoomController {
         }).start();
     }
 
-    //清算游戏
+    // Conclude the game by processing victory conditions and updating the UI
     private void gameOver(String msg,ArrayList<Player> endPlayerList) throws IOException {
-        String[] parts = msg.split(" ");
-        String victoryPlayerName = parts[1];
-        ArrayList<ArrayList<Tile>> victoryTiles = null;
-        ArrayList<ArrayList<Tile>> copyLockedTile;
+        String[] parts = msg.split(" "); // Split the message to analyze it
+        String victoryPlayerName = parts[1]; // Extract the name of the player who won
+        ArrayList<ArrayList<Tile>> victoryTiles = null; // Initialize a structure to hold the winning tiles
+        ArrayList<ArrayList<Tile>> copyLockedTile; // Temporary storage for locked tiles
         for (Player player: endPlayerList){
             if (Objects.equals(player.getName(), victoryPlayerName)){
-                victoryTiles = new ArrayList<>(player.getHandTileSet().getTileSets());
-                copyLockedTile = new ArrayList<>(player.getLockedTileSet().getTileSets());
+                victoryTiles = new ArrayList<>(player.getHandTileSet().getTileSets()); // Copy the hand tiles of the winning player
+                copyLockedTile = new ArrayList<>(player.getLockedTileSet().getTileSets()); // Copy the locked tiles of the winning player
                 int i = 0;
                 while (i<4){
                     if (i == 0){
                         for (ArrayList<Tile> tileArrayList: copyLockedTile){
                             for (Tile tile: tileArrayList){
                                 if (Objects.equals(tile.getType(), "Character")){
-                                    victoryTiles.get(0).add(tile);
+                                    victoryTiles.get(0).add(tile); // Add character tiles to the victory tiles
                                 }
                             }
                         }
@@ -262,7 +286,7 @@ public class GameRoomController {
                         for (ArrayList<Tile> tileArrayList: copyLockedTile){
                             for (Tile tile: tileArrayList){
                                 if (Objects.equals(tile.getType(), "Bamboo")){
-                                    victoryTiles.get(1).add(tile);
+                                    victoryTiles.get(1).add(tile); // Add bamboo tiles to the victory tiles
                                 }
                             }
                         }
@@ -270,7 +294,7 @@ public class GameRoomController {
                         for (ArrayList<Tile> tileArrayList: copyLockedTile){
                             for (Tile tile: tileArrayList){
                                 if (Objects.equals(tile.getType(), "Dot")){
-                                    victoryTiles.get(2).add(tile);
+                                    victoryTiles.get(2).add(tile); // Add dot tiles to the victory tiles
                                 }
                             }
                         }
@@ -278,7 +302,7 @@ public class GameRoomController {
                         for (ArrayList<Tile> tileArrayList: copyLockedTile){
                             for (Tile tile: tileArrayList){
                                 if (!Objects.equals(tile.getType(), "Character" )&&!Objects.equals(tile.getType(), "Bamboo" )&&!Objects.equals(tile.getType(), "Dot" )){
-                                    victoryTiles.get(3).add(tile);
+                                    victoryTiles.get(3).add(tile); // Add other types of tiles to the victory tiles
                                 }
                             }
                         }
@@ -289,50 +313,49 @@ public class GameRoomController {
         }
 
         int index = 0;
-        String[] name = {"董瀚泽","许敬哲","孙凌睿","邢家维"};
+        String[] name = {"Hanze Dong","Jingzhe Xu","Tianyi Ma","Jiawei Xing"}; // Localized names for display
         for (Player player: endPlayerList){
             if (Objects.equals(player.getName(), socket.getLocalAddress().toString() + ":" + socket.getLocalPort())) {
-                index = endPlayerList.indexOf(player);
+                index = endPlayerList.indexOf(player); // Find the index of the local player
             }
         }
 
-        parts[1] = name[index];
+        parts[1] = name[index]; // Replace the winning player's name with the localized name
 
-        String newMsg = String.join(" ",parts);
+        String newMsg = String.join(" ",parts); // Construct the new message for display
 
-
-
-
-
-
-
+        // Transition to the game over scene
         FXMLLoader loader = new FXMLLoader(getClass().getResource("overRoom.fxml"));
         Scene overScene = new Scene(loader.load(),1000,800);
 
-        // 获取当前窗口
+        // Get the current window
         Stage stage = (Stage) autoHideLabel.getScene().getWindow();
-        stage.setScene(overScene);
+        stage.setScene(overScene); // Set the new scene for game over
 
+        // Get the controller for the game over room and initialize it
         OverRoomController controller = loader.getController();
         controller.initialize(newMsg,victoryTiles);
     }
 
-
+    // Display chow options based on the server's message
     private void showChowChoice(String msg) {
-        chowOptionsVBox.getChildren().clear(); // 清空之前的选项
+        chowOptionsVBox.getChildren().clear(); // Clear previous options
         String[] parts = msg.split(" ");
         if (parts.length <= 2) {
-            chowOptionsVBox.setVisible(false);
+            chowOptionsVBox.setVisible(false); // Hide if no options are available
             return;
         }
-        String tile = parts[1];
+        String tile = parts[1]; // The tile involved in the chow
         char firstChar = tile.charAt(0);
-        int magnitude = Character.getNumericValue(firstChar);
+        int magnitude = Character.getNumericValue(firstChar); // Numerical value of the tile
 
+        // Iterate over possible chow combinations provided by the server
         for (int i = 2; i < parts.length; i++) {
             ArrayList<String> chowTiles = new ArrayList<>();
             String tile1 = "";
             String tile2 = "";
+
+            // Calculate the specific tiles needed to form a Chow
             if (Objects.equals(parts[i], "1")){
                 tile1 = (magnitude - 2) + tile.substring(1);
                 tile2 = (magnitude - 1) + tile.substring(1);
@@ -346,6 +369,7 @@ public class GameRoomController {
             chowTiles.add(tile1);
             chowTiles.add(tile2);
 
+            // Create visual representation for chow options
             VBox optionBox = new VBox();
             optionBox.setSpacing(10);
 
@@ -361,12 +385,12 @@ public class GameRoomController {
                 tilesBox.getChildren().add(tileRect);
             }
 
-            Button selectButton = new Button("选择");
+            Button selectButton = new Button("Select");
             int finalI = i;
             selectButton.setOnAction(e -> {
                 try {
                     sendOperation("Chow " + parts[finalI]);
-                    chowOptionsVBox.setVisible(false); // 选择后收起选项
+                    chowOptionsVBox.setVisible(false); // Collapse options after selection
                 } catch (IOException ioException) {
                     ioException.printStackTrace();
                 }
@@ -379,10 +403,12 @@ public class GameRoomController {
         chowOptionsVBox.setVisible(true);
     }
 
+    // Display messages temporarily on the UI
     private void showMsg(String msg) {
-        autoHideLabel.setText(msg);
-        autoHideLabel.setVisible(true);
+        autoHideLabel.setText(msg); // Set text of the auto-hide label
+        autoHideLabel.setVisible(true); // Show the label
 
+        // Set up a timeline to hide the label after 1 second
         Timeline timeline = new Timeline(new KeyFrame(
                 Duration.seconds(1),
                 event -> autoHideLabel.setVisible(false)
@@ -391,36 +417,38 @@ public class GameRoomController {
         timeline.play();
     }
 
-    //更新自己的手牌，所有人的弃牌堆，所有人锁定的牌
-//    //玩家
+    // Update the game board based on the current game state
     private void updateGameBoard(ArrayList<Player> playerList) {
-        updatePlayerName(playerList);
-        updateDealerState(playerList);
-        updateTurnState(playerList);
+        updatePlayerName(playerList); // Update the names of the players on the board
+        updateDealerState(playerList); // Update the dealer status for each player
+        updateTurnState(playerList); // Update the turn status, showing whose turn it is
         for (Player player: playerList){
-            System.out.println(player.getHandTileSet().getTileSets());
+            System.out.println(player.getHandTileSet().getTileSets()); // Debug print of hand tiles
         }
-        updateHandTileDisplay(playerList);
-        updatePlayedTileDisplay(playerList);
-        updateLockedTile(playerList);
-        // 根据当前游戏状态更新游戏板
-        // 例如：显示牌、玩家动作等
+        updateHandTileDisplay(playerList); // Update the visual display of players' hand tiles
+        updatePlayedTileDisplay(playerList); // Update the visual display of tiles that have been played
+        updateLockedTile(playerList); // Update the visual display of locked tiles
     }
 
+    // Updates the visual display of played tiles
     private void updatePlayedTileDisplay(ArrayList<Player> playerList) {
-        // 获取打出的牌
-        int index = 0;
-        playedTileSetList.clear();
+        int index = 0; // Index to track the local player's position relative to the board
+        playedTileSetList.clear(); // Clear previous list of played tiles
+
+        // Iterate over players to update played tiles list and find the local player's index
         for (Player player: playerList){
             playedTileSetList.add(player.getPlayedTileSet());
             if (Objects.equals(player.getName(), socket.getLocalAddress().toString() + ":" + socket.getLocalPort())) {
                 index = playerList.indexOf(player);
             }
         }
-        // 打出的牌更新
+
+        // Update the display for each side of the board
         int i = 0;
         while (i != 4){
-            playedPane.get(i).getChildren().clear();
+            playedPane.get(i).getChildren().clear(); // Clear the current pane
+
+            // Add tiles to the respective pane according to the current player's relative position
             for (Tile tile : playedTileSetList.get(index).getTileSets()){
                 Rectangle tile1 = new Rectangle();
                 tile1.setWidth(30);
@@ -429,9 +457,10 @@ public class GameRoomController {
                 tile1.setArcHeight(10);
                 String tileType = tile.toString();
                 Image tileImage = new Image(getClass().getResource("/tiles/" + tileType + ".png").toExternalForm());
-//                Image tileImage = new Image(getClass().getResource("/tiles/1Bamboo.png").toExternalForm());
                 tile1.setFill(new ImagePattern(tileImage));
                 Rotate rotate = new Rotate();
+
+                // Rotate the tile based on its pane position for correct orientation
                 if (i==1){
                     rotate.setAngle(270);
                     rotate.setPivotX(tile1.getWidth() / 2);
@@ -446,39 +475,27 @@ public class GameRoomController {
                 playedPane.get(i).getChildren().add(tile1);
             }
             i++;
-            index = (index+1)%playerList.size();
+            index = (index+1)%playerList.size(); // Circular increment to handle board sides
         }
     }
 
+    // Update the display of the hand tiles for the local player
     private void updateHandTileDisplay(ArrayList<Player> playerList) {
-        //更新手牌内容
-        handTileList.clear();
+        handTileList.clear(); // Clear previous hand tiles
+
+        // Find the local player and update their hand tiles based on the current game state
         for (Player player : playerList) {
             if (Objects.equals(player.getName(), socket.getLocalAddress().toString()+":"+socket.getLocalPort())) {
                 for (ArrayList<Tile> tileList : player.getHandTileSet().getTileSets()) {
                     for (Tile tile:tileList){
-                        handTileList.add(tile);
+                        handTileList.add(tile); // Add each tile to the hand tile list
                     }
                 }
             }
         }
-        //给手牌上图像
-//        for (int i = 0; i < player1Tiles.getChildren().size(); i++) {
-//            if (i < handTileList.size()) {
-//                //
-//                String tileType = handTileList.get(i).toString();
-//                Rectangle tile = (Rectangle) player1Tiles.getChildren().get(i);
-//                tile.setId(tileType);
-//                Image tileImage = new Image(getClass().getResource("/tiles/" + tileType + ".png").toExternalForm());
-//                tile.setFill(new ImagePattern(tileImage));
-//            }else {
-//                Rectangle tile = (Rectangle) player1Tiles.getChildren().get(i);
-//                tile.setId("");
-//                tile.setFill(Color.WHITE);
-//            }
-//        }
 
-        player1Tiles.getChildren().clear();
+        // Update the visual representation of tiles in the player's hand
+        player1Tiles.getChildren().clear(); // Clear existing tiles
         for (Tile tile: handTileList){
             Rectangle tile1 = new Rectangle();
             tile1.setId(tile.toString());
@@ -487,20 +504,22 @@ public class GameRoomController {
             tile1.setArcWidth(10);
             tile1.setArcHeight(10);
             tile1.setOnMouseClicked((MouseEvent event) -> {
-                handleTileClick(event);
+                handleTileClick(event); // Set a mouse click event handler
             });
             String tileType = tile.toString();
             Image tileImage = new Image(getClass().getResource("/tiles/" + tileType + ".png").toExternalForm());
-//                Image tileImage = new Image(getClass().getResource("/tiles/1Bamboo.png").toExternalForm());
             tile1.setFill(new ImagePattern(tileImage));
-            player1Tiles.getChildren().add(tile1);
+            player1Tiles.getChildren().add(tile1); // Add the tile to the display
         }
 
     }
 
+    // This method updates the display of locked tiles for all players
     private void updateLockedTile(ArrayList<Player> playerList) {
         int index = 0;
-        lockedTileSetList.clear();
+        lockedTileSetList.clear(); // Clear existing locked tiles
+
+        // Populate the lockedTileSetList with locked tiles from all players
         for (Player player: playerList){
             ArrayList<Tile> lockedTileSet = new ArrayList<>();
             for (ArrayList<Tile> tileSet : player.getLockedTileSet().getTileSets()){
@@ -508,14 +527,15 @@ public class GameRoomController {
             }
             lockedTileSetList.add(lockedTileSet);
             if (Objects.equals(player.getName(), socket.getLocalAddress().toString() + ":" + socket.getLocalPort())) {
-                index = playerList.indexOf(player);
+                index = playerList.indexOf(player); // Get index for local player
             }
         }
 
+        // Update locked tiles display based on player's relative positions
         int i = 0;
         int m = index;
-        while (i != 2){
-            lockedBox1.get(i).getChildren().clear();
+        while (i != 2){ // Update horizontal locked tiles
+            lockedBox1.get(i).getChildren().clear(); // Clear the current tiles
             for (Tile tile : lockedTileSetList.get(m)){
                 Rectangle tile1 = new Rectangle();
                 tile1.setWidth(30);
@@ -524,7 +544,6 @@ public class GameRoomController {
                 tile1.setArcHeight(10);
                 String tileType = tile.toString();
                 Image tileImage = new Image(getClass().getResource("/tiles/" + tileType + ".png").toExternalForm());
-//                Image tileImage = new Image(getClass().getResource("/tiles/1Bamboo.png").toExternalForm());
                 tile1.setFill(new ImagePattern(tileImage));
                 lockedBox1.get(i).getChildren().add(tile1);
             }
@@ -536,8 +555,8 @@ public class GameRoomController {
 
         i = 0;
         m = (index+1)%playerList.size();
-        while (i != 2){
-            lockedBox2.get(i).getChildren().clear();
+        while (i != 2){ // Update vertical locked tiles
+            lockedBox2.get(i).getChildren().clear(); // Clear the current tiles
             for (Tile tile : lockedTileSetList.get(m)){
                 Rectangle tile1 = new Rectangle();
                 tile1.setWidth(30);
@@ -546,11 +565,10 @@ public class GameRoomController {
                 tile1.setArcHeight(10);
                 String tileType = tile.toString();
                 Image tileImage = new Image(getClass().getResource("/tiles/" + tileType + ".png").toExternalForm());
-//                Image tileImage = new Image(getClass().getResource("/tiles/1Bamboo.png").toExternalForm());
                 tile1.setFill(new ImagePattern(tileImage));
                 if (i == 0){
                     Rotate rotate = new Rotate();
-                    rotate.setAngle(270);
+                    rotate.setAngle(270); // Rotate the tile for vertical display
                     rotate.setPivotX(tile1.getWidth() / 2);
                     rotate.setPivotY(tile1.getHeight() / 2);
                     tile1.getTransforms().add(rotate);
@@ -569,8 +587,11 @@ public class GameRoomController {
         }
     }
 
+    // Update the state indicating whether it's the player's turn
     private void updateTurnState(ArrayList<Player> playerList) {
         int index = 0;
+
+        // Determine the index of the local player
         for (Player player: playerList){
             if (Objects.equals(player.getName(), socket.getLocalAddress().toString() + ":" + socket.getLocalPort())) {
                 index = playerList.indexOf(player);
@@ -578,20 +599,25 @@ public class GameRoomController {
         }
 
         int i = 0;
+
+        // Update the turn status labels for each player in the game
         while (i != 4){
             if (playerList.get(index).getTurnState()){
-                turnLabelList.get(i).setText("Acting");
+                turnLabelList.get(i).setText("Acting"); // Player is currently acting
             }else {
-                turnLabelList.get(i).setText("Waiting");
+                turnLabelList.get(i).setText("Waiting"); // Player is waiting
             }
             i++;
-            index = (index+1)%playerList.size();
+            index = (index+1)%playerList.size(); // Move to the next player
         }
 
     }
 
+    // This method updates each player's dealer status on the UI
     private void updateDealerState(ArrayList<Player> playerList) {
         int index = 0;
+
+        // Find the local player's index
         for (Player player: playerList){
             if (Objects.equals(player.getName(), socket.getLocalAddress().toString() + ":" + socket.getLocalPort())) {
                 index = playerList.indexOf(player);
@@ -599,18 +625,22 @@ public class GameRoomController {
         }
 
         int i = 0;
+
+        // Update the dealer status labels for each player
         while (i != 4){
             if (playerList.get(index).getDealerState()){
-                dealerLabelList.get(i).setText("Dealer");
+                dealerLabelList.get(i).setText("Dealer"); // Player is the dealer
             }
             i++;
             index = (index+1)%playerList.size();
         }
     }
+
+    // This method updates the displayed names of the players
     private void updatePlayerName(ArrayList<Player> playerList) {
         int index = 0;
 
-        String[] name = {"董瀚泽","许敬哲","孙凌睿","邢家维"};
+        String[] name = {"Hanze Dong","Jingzhe Xu","Tianyi Ma","Jiawei Xing"}; // Localized player names
         for (Player player: playerList){
             if (Objects.equals(player.getName(), socket.getLocalAddress().toString() + ":" + socket.getLocalPort())) {
                 index = playerList.indexOf(player);
@@ -618,6 +648,8 @@ public class GameRoomController {
         }
 
         int i = 0;
+
+        // Update the player name labels with localized names
         while (i != 4){
             playerLabelList.get(i).setText(name[index]);
             i++;
@@ -626,106 +658,71 @@ public class GameRoomController {
 
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    // Handles actions triggered by music control buttons
     @FXML
     private void handleMusic(ActionEvent event) {
         if (mediaPlayer == null) {
             if (!musicList.isEmpty()) {
-                playSong(currentSongIndex);
+                playSong(currentSongIndex); // Play the first song if none is currently playing
             }
         } else {
             MediaPlayer.Status status = mediaPlayer.getStatus();
             if (status == MediaPlayer.Status.PLAYING) {
-                mediaPlayer.pause();
+                mediaPlayer.pause(); // Pause the music if it is playing
             } else {
-                mediaPlayer.play();
+                mediaPlayer.play(); // Play the music if it is paused
             }
         }
     }
 
+    // Skip to the next song
     @FXML
     private void handleNext(ActionEvent event) {
         playNextSong();
-    }
+    } // Play the next song in the playlist
 
+    // Go back to the previous song
     @FXML
     private void handlePrevious(ActionEvent event) {
         playPreviousSong();
-    }
+    } // Play the previous song in the playlist
 
+    // Load music files from the predefined music folder
     private void loadMusic() {
-        // 预定义的音乐文件夹路径
-        File musicFolder = new File(getClass().getResource("/music/").getPath());
+        File musicFolder = new File(getClass().getResource("/music/").getPath()); // Access the music directory
         if (musicFolder.isDirectory()) {
             for (File file : musicFolder.listFiles()) {
                 if (file.isFile() && (file.getName().endsWith(".mp3"))){
-                    musicList.add(file.toURI().toString());
+                    musicList.add(file.toURI().toString()); // Add music file URIs to the list
                 }
             }
         }
         if (!musicList.isEmpty()) {
-            playSong(currentSongIndex);
+            playSong(currentSongIndex); // Start playing the first song
         }
     }
 
+    // Play a specific song from the playlist based on index
     private void playSong(int index) {
         if (mediaPlayer != null) {
-            mediaPlayer.stop();
+            mediaPlayer.stop(); // Stop any currently playing media
         }
         Media media = new Media(musicList.get(index));
         mediaPlayer = new MediaPlayer(media);
-        mediaPlayer.setOnEndOfMedia(this::playNextSong);
-        mediaPlayer.play();
+        mediaPlayer.setOnEndOfMedia(this::playNextSong); // Set up to play the next song when this one ends
+        mediaPlayer.play(); // Play the media
     }
 
+    // Play the next song in the playlist
     private void playNextSong() {
         currentSongIndex = (currentSongIndex + 1) % musicList.size();
         playSong(currentSongIndex);
     }
 
+    // Play the previous song in the playlist
     private void playPreviousSong() {
         currentSongIndex = (currentSongIndex - 1 + musicList.size()) % musicList.size();
         playSong(currentSongIndex);
     }
-
-
 
 }

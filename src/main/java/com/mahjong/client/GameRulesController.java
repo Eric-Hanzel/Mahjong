@@ -10,21 +10,21 @@ import java.io.IOException;
 public class GameRulesController extends Client{
 
     @FXML
-    private Button returnButton;
+    private Button returnButton; // Button to handle returning to the previous screen
 
     public GameRulesController() throws IOException {
+        // Constructor for the controller
     }
 
 
     @FXML
     private void handleReturn() throws IOException {
-        // TODO: 实现返回上一个页面的逻辑
-        // 假设你有一个方法来加载并显示上一个页面
+        // Method to handle the action when the 'Return' button is pressed
+        // Load the main menu view
         FXMLLoader fxmlLoader = new FXMLLoader(Client.class.getResource("menu.fxml"));
-        Scene menuScene = new Scene(fxmlLoader.load(), 1000, 800);
-        // 创建游戏主页面的场景和布局
+        Scene menuScene = new Scene(fxmlLoader.load(), 1000, 800); // Create a scene for the main menu with specified dimensions
 
-        // 获取当前窗口并设置新场景
+        // Get the current stage (window) using the button's scene and set the new scene
         Stage stage= (Stage) returnButton.getScene().getWindow();
         stage.setScene(menuScene);
     }

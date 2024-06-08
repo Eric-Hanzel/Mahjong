@@ -6,28 +6,30 @@ import javafx.event.ActionEvent;
 public class JoinGameRoomController {
 
     @FXML
-    private TextField inviteCodeField;
+    private TextField inviteCodeField;  // TextField for entering the room invite code
 
     @FXML
-    private Button joinRoomButton;
+    private Button joinRoomButton;  // Button to trigger the join room action
 
     @FXML
-    private Button backButton;
+    private Button backButton;  // Button to go back to the previous screen
 
-    // 当用户点击加入房间按钮时调用此方法
+    // Method to handle the join room button click
     @FXML
     private void joinRoom(ActionEvent event) {
-        String inviteCode = inviteCodeField.getText();
-        // 在这里添加加入房间的逻辑
+        String inviteCode = inviteCodeField.getText();  // Retrieve the invite code from the TextField
+
+        // Add logic here to join the room using the invite code
         System.out.println("加入房间的邀请码: " + inviteCode);
-        // 例如：roomManager.joinRoom(inviteCode);
+        // Example: roomManager.joinRoom(inviteCode);
     }
 
-    // 当用户点击返回按钮时调用此方法
+    // Method to handle the back button click
     @FXML
     private void goBack(ActionEvent event) {
-        // 在这里添加返回上一个界面的逻辑
+
+        // Add logic here to return to the previous screen
         System.out.println("返回上一个界面");
-        // 例如：mainController.showPreviousView();
+        // Example: mainController.showPreviousView();
     }
 }
