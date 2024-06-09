@@ -12,7 +12,14 @@ module com.example.mahjong {
     requires com.almasb.fxgl.all;
     requires java.logging;
 
+    // test using, remove annotation
+    // requires junit;
+    // requires org.testng;
+
+
 
     opens com.mahjong.client to javafx.fxml;
     exports com.mahjong.client;
+    exports logic.factories;
+    exports logic.tilesSets;
 }
