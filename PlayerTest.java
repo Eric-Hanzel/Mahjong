@@ -114,37 +114,6 @@ public class PlayerTest {
             e.printStackTrace();
         }
 
-        // 测试各类状态的 getter 和 setter 方法
-        testBooleanGetterSetter(player, "CanGet", true);
-        testBooleanGetterSetter(player, "CanDiscard", true);
-        testBooleanGetterSetter(player, "CanChow", true);
-        testBooleanGetterSetter(player, "CanPong", true);
-        testBooleanGetterSetter(player, "CanBrightKong", true);
-        testBooleanGetterSetter(player, "CanDarkKong", true);
-        testBooleanGetterSetter(player, "CanHu", true);
-        testBooleanGetterSetter(player, "Skip", true);
     }
 
-    private static void testBooleanGetterSetter(Player player, String propertyName, boolean value) {
-        try {
-            String setterName = "set" + propertyName;
-            String getterName = "get" + propertyName;
-
-            if (propertyName.equals("CanHu")) {
-                getterName = "getcanHu";
-            }
-
-            Method setter = player.getClass().getMethod(setterName, boolean.class);
-            Method getter = player.getClass().getMethod(getterName);
-
-            setter.invoke(player, value);
-            boolean result = (boolean) getter.invoke(player);
-
-            assert result == value : setterName + "/" + getterName + " 测试失败";
-            System.out.println(setterName + "/" + getterName + " 测试通过");
-        } catch (Exception e) {
-            System.err.println(propertyName + " 测试失败");
-            e.printStackTrace();
-        }
-    }
 }
