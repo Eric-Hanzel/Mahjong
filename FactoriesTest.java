@@ -1,11 +1,12 @@
 package logic.factories;
 
-import org.junit.jupiter.api.Test;
 import logic.tiles.*;
 import logic.tilesSets.*;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import static org.testng.AssertJUnit.assertNotNull;
+import static org.testng.AssertJUnit.assertTrue;
 
 public class FactoriesTest {
 
