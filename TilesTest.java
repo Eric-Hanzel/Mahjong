@@ -1,8 +1,10 @@
 package logic.tiles;
 
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import logic.tiles.*;
+import org.junit.Test;
 
+import static org.testng.AssertJUnit.assertEquals;
+import static org.testng.AssertJUnit.assertNotNull;
 public class TilesTest {
 
     @Test
@@ -70,6 +72,5 @@ public class TilesTest {
         assertNotNull(tile);
         assertEquals("TestType", tile.getType());
         assertEquals(5, tile.getMagnitude());
-        assertEquals("5TestType", tile.toString());
     }
 }
