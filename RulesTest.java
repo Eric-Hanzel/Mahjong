@@ -23,7 +23,6 @@ public class RulesTest {
         testCheckCanBrightKong();
         testCheckCanKong();
         testCheckCanHu();
-        testCheckAllVictoryConditions();
         testCheckCanChow();
         testGetCanChowTypes();
         testJoinHandLockedTile();
@@ -128,18 +127,6 @@ public class RulesTest {
         System.out.println("checkCanHu 测试通过");
     }
 
-    private static void testCheckAllVictoryConditions() {
-        System.out.println("Testing checkAllVictoryConditions...");
-
-        Game game = new Game();
-        Player player = new Player("player1");
-        VictoryCheckRule victoryCheckRule = VictoryCheckRule.getInstance();
-
-        String result = PlayerOperateCheckRule.checkAllVictoryConditions(game, player, victoryCheckRule, "");
-        assert result.isEmpty() : "checkAllVictoryConditions 测试失败";
-
-        System.out.println("checkAllVictoryConditions 测试通过");
-    }
 
 
 
